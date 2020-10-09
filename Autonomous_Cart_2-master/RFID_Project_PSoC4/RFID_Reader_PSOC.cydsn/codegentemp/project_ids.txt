@@ -1,0 +1,7 @@
+C:\Users\Abad_Sethi\Desktop\AbadPxl\2-EAI\Project_Onderzoek\Autonomous_Cart\AutonomousCart\I2C_LCD_PSOC.cydsn\I2C_LCD_PSOC.cyprj|361928e0-30e5-4214-93ff-a89744f34f3d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|27a770ca-9a6b-43eb-b78a-5b1aea8a676e
+E:\OneDrive\Documenten\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|51a73377-17b5-473d-8d4c-36b3c39afa92
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|35ab4513-30c6-4c47-9e7a-6c5a5e2ee46d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5f306dbd-0117-4e1e-a1ba-dd61e13d6612
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|494419e3-ce00-4edf-a5b2-fb4fe63bb26a
+C:\Users\Abad_Sethi\Desktop\AbadPxl\2-EAI\Project_Onderzoek\Autonomous_Cart\AutonomousCart\RFID_Reader_PSOC.cydsn\RFID_Reader_PSOC.cyprj|51bc7401-5bcb-4e82-a4c7-189d19be6c6f

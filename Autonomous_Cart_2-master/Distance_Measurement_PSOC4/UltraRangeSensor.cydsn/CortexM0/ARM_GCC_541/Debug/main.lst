@@ -1,0 +1,2487 @@
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.stack_handler,"ax",%progbits
+  20              		.align	2
+  21              		.global	stack_handler
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	stack_handler, %function
+  25              	stack_handler:
+  26              	.LFB36:
+  27              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"  
+   2:main.c        **** #include <stdio.h>  
+   3:main.c        **** #include <stdlib.h>
+   4:main.c        **** 
+   5:main.c        **** short afstand = 0;
+   6:main.c        **** 
+   7:main.c        **** void stack_handler(uint32 eventCode , void *eventParam)
+   8:main.c        **** {   
+  28              		.loc 1 8 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 84B0     		sub	sp, sp, #16
+  38              		.cfi_def_cfa_offset 24
+  39 0004 0400     		movs	r4, r0
+   9:main.c        ****     CYBLE_GATTS_HANDLE_VALUE_NTF_T test;
+  10:main.c        ****     test.attrHandle = CYBLE_ULTRARANGESENSOR_SENSOR_CHAR_HANDLE;
+  40              		.loc 1 10 0
+  41 0006 01A8     		add	r0, sp, #4
+  42              	.LVL1:
+  43 0008 1223     		movs	r3, #18
+  44 000a 0381     		strh	r3, [r0, #8]
+  11:main.c        ****     test.value.val = (uint8*)&afstand;
+  45              		.loc 1 11 0
+  46 000c 184B     		ldr	r3, .L8
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 2
+
+
+  47 000e 0193     		str	r3, [sp, #4]
+  12:main.c        ****     test.value.len = 1;
+  48              		.loc 1 12 0
+  49 0010 0123     		movs	r3, #1
+  50 0012 8380     		strh	r3, [r0, #4]
+  13:main.c        ****     CyBle_GattsWriteAttributeValue( &test, 0, &cyBle_connHandle, CYBLE_GATT_DB_LOCALLY_INITIATED);
+  51              		.loc 1 13 0
+  52 0014 0023     		movs	r3, #0
+  53 0016 174A     		ldr	r2, .L8+4
+  54 0018 0021     		movs	r1, #0
+  55              	.LVL2:
+  56 001a FFF7FEFF 		bl	CyBle_GattsWriteAttributeValue
+  57              	.LVL3:
+  14:main.c        ****     
+  15:main.c        ****     switch(eventCode)
+  58              		.loc 1 15 0
+  59 001e 262C     		cmp	r4, #38
+  60 0020 1AD0     		beq	.L3
+  61 0022 02D8     		bhi	.L4
+  62 0024 012C     		cmp	r4, #1
+  63 0026 05D0     		beq	.L5
+  64 0028 1FE0     		b	.L1
+  65              	.L4:
+  66 002a 412C     		cmp	r4, #65
+  67 002c 06D0     		beq	.L6
+  68 002e 422C     		cmp	r4, #66
+  69 0030 0BD0     		beq	.L7
+  70 0032 1AE0     		b	.L1
+  71              	.L5:
+  16:main.c        ****     { 
+  17:main.c        ****         case CYBLE_EVT_STACK_ON:
+  18:main.c        ****             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+  72              		.loc 1 18 0
+  73 0034 0020     		movs	r0, #0
+  74 0036 FFF7FEFF 		bl	CyBle_GappStartAdvertisement
+  75              	.LVL4:
+  19:main.c        ****             break;
+  76              		.loc 1 19 0
+  77 003a 16E0     		b	.L1
+  78              	.L6:
+  20:main.c        ****             
+  21:main.c        ****         case CYBLE_EVT_GATT_CONNECT_IND:
+  22:main.c        ****             Rood_Write(0);
+  79              		.loc 1 22 0
+  80 003c 0020     		movs	r0, #0
+  81 003e FFF7FEFF 		bl	Rood_Write
+  82              	.LVL5:
+  23:main.c        ****             Blauw_Write(1);
+  83              		.loc 1 23 0
+  84 0042 0120     		movs	r0, #1
+  85 0044 FFF7FEFF 		bl	Blauw_Write
+  86              	.LVL6:
+  24:main.c        ****             break;
+  87              		.loc 1 24 0
+  88 0048 0FE0     		b	.L1
+  89              	.L7:
+  25:main.c        ****             
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 3
+
+
+  26:main.c        ****         case CYBLE_EVT_GATT_DISCONNECT_IND:
+  27:main.c        ****             Rood_Write(1);
+  90              		.loc 1 27 0
+  91 004a 0120     		movs	r0, #1
+  92 004c FFF7FEFF 		bl	Rood_Write
+  93              	.LVL7:
+  28:main.c        ****             Blauw_Write(0);
+  94              		.loc 1 28 0
+  95 0050 0020     		movs	r0, #0
+  96 0052 FFF7FEFF 		bl	Blauw_Write
+  97              	.LVL8:
+  29:main.c        ****             break; 
+  98              		.loc 1 29 0
+  99 0056 08E0     		b	.L1
+ 100              	.L3:
+  30:main.c        ****             
+  31:main.c        ****         case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:	
+  32:main.c        ****             if(CyBle_GetState() == CYBLE_STATE_DISCONNECTED)
+ 101              		.loc 1 32 0
+ 102 0058 074B     		ldr	r3, .L8+8
+ 103 005a 1B78     		ldrb	r3, [r3]
+ 104 005c 062B     		cmp	r3, #6
+ 105 005e 04D1     		bne	.L1
+  33:main.c        ****             {            
+  34:main.c        ****             CySysPmSetWakeupPolarity(CY_PM_STOP_WAKEUP_ACTIVE_HIGH);
+ 106              		.loc 1 34 0
+ 107 0060 0120     		movs	r0, #1
+ 108 0062 FFF7FEFF 		bl	CySysPmSetWakeupPolarity
+ 109              	.LVL9:
+  35:main.c        ****             CySysPmStop();            
+ 110              		.loc 1 35 0
+ 111 0066 FFF7FEFF 		bl	CySysPmStop
+ 112              	.LVL10:
+ 113              	.L1:
+  36:main.c        ****             }
+  37:main.c        ****             break;
+  38:main.c        ****     }
+  39:main.c        **** }
+ 114              		.loc 1 39 0
+ 115 006a 04B0     		add	sp, sp, #16
+ 116              		@ sp needed
+ 117              	.LVL11:
+ 118 006c 10BD     		pop	{r4, pc}
+ 119              	.L9:
+ 120 006e C046     		.align	2
+ 121              	.L8:
+ 122 0070 00000000 		.word	.LANCHOR0
+ 123 0074 00000000 		.word	cyBle_connHandle
+ 124 0078 00000000 		.word	cyBle_state
+ 125              		.cfi_endproc
+ 126              	.LFE36:
+ 127              		.size	stack_handler, .-stack_handler
+ 128              		.section	.text.main,"ax",%progbits
+ 129              		.align	2
+ 130              		.global	main
+ 131              		.code	16
+ 132              		.thumb_func
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 4
+
+
+ 133              		.type	main, %function
+ 134              	main:
+ 135              	.LFB37:
+  40:main.c        ****     
+  41:main.c        **** int main(void)  
+  42:main.c        **** {  
+ 136              		.loc 1 42 0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 8
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 00B5     		push	{lr}
+ 141              		.cfi_def_cfa_offset 4
+ 142              		.cfi_offset 14, -4
+ 143 0002 83B0     		sub	sp, sp, #12
+ 144              		.cfi_def_cfa_offset 16
+  43:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */  
+ 145              		.loc 1 43 0
+ 146              		.syntax divided
+ 147              	@ 43 "main.c" 1
+ 148 0004 62B6     		CPSIE   i
+ 149              	@ 0 "" 2
+  44:main.c        ****     
+  45:main.c        ****     UART_Start();  
+ 150              		.loc 1 45 0
+ 151              		.thumb
+ 152              		.syntax unified
+ 153 0006 FFF7FEFF 		bl	UART_Start
+ 154              	.LVL12:
+  46:main.c        ****     PWM_Start(); 
+ 155              		.loc 1 46 0
+ 156 000a FFF7FEFF 		bl	PWM_Start
+ 157              	.LVL13:
+  47:main.c        ****     Timer_Start();
+ 158              		.loc 1 47 0
+ 159 000e FFF7FEFF 		bl	Timer_Start
+ 160              	.LVL14:
+  48:main.c        ****   
+  49:main.c        ****     PWM_WritePeriod(255);
+ 161              		.loc 1 49 0
+ 162 0012 FF20     		movs	r0, #255
+ 163 0014 FFF7FEFF 		bl	PWM_WritePeriod
+ 164              	.LVL15:
+  50:main.c        ****     PWM_WriteCompare(127);
+ 165              		.loc 1 50 0
+ 166 0018 7F20     		movs	r0, #127
+ 167 001a FFF7FEFF 		bl	PWM_WriteCompare
+ 168              	.LVL16:
+  51:main.c        ****   
+  52:main.c        ****     CyBle_Start(stack_handler);
+ 169              		.loc 1 52 0
+ 170 001e 1248     		ldr	r0, .L13
+ 171 0020 FFF7FEFF 		bl	CyBle_Start
+ 172              	.LVL17:
+ 173              	.L12:
+  53:main.c        ****     char string[1];
+  54:main.c        ****     for(;;)
+  55:main.c        ****     {
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 5
+
+
+  56:main.c        ****           if(Echo_Read() == 1)
+ 174              		.loc 1 56 0
+ 175 0024 FFF7FEFF 		bl	Echo_Read
+ 176              	.LVL18:
+ 177 0028 0128     		cmp	r0, #1
+ 178 002a 19D1     		bne	.L11
+  57:main.c        ****          {        
+  58:main.c        ****           afstand = (Timer_ReadCounter()/4);
+ 179              		.loc 1 58 0
+ 180 002c FFF7FEFF 		bl	Timer_ReadCounter
+ 181              	.LVL19:
+ 182 0030 8008     		lsrs	r0, r0, #2
+ 183 0032 00B2     		sxth	r0, r0
+ 184 0034 0D4B     		ldr	r3, .L13+4
+ 185 0036 1880     		strh	r0, [r3]
+  59:main.c        ****           itoa(afstand,string,10);
+ 186              		.loc 1 59 0
+ 187 0038 0A22     		movs	r2, #10
+ 188 003a 01A9     		add	r1, sp, #4
+ 189 003c FFF7FEFF 		bl	itoa
+ 190              	.LVL20:
+  60:main.c        ****           UART_UartPutString("Afstand in cm: ");
+ 191              		.loc 1 60 0
+ 192 0040 0B48     		ldr	r0, .L13+8
+ 193 0042 FFF7FEFF 		bl	UART_UartPutString
+ 194              	.LVL21:
+  61:main.c        ****           UART_UartPutString(string);
+ 195              		.loc 1 61 0
+ 196 0046 01A8     		add	r0, sp, #4
+ 197 0048 FFF7FEFF 		bl	UART_UartPutString
+ 198              	.LVL22:
+  62:main.c        ****           UART_UartPutString("\n\r");
+ 199              		.loc 1 62 0
+ 200 004c 0948     		ldr	r0, .L13+12
+ 201 004e FFF7FEFF 		bl	UART_UartPutString
+ 202              	.LVL23:
+  63:main.c        ****           Timer_WriteCounter(0);
+ 203              		.loc 1 63 0
+ 204 0052 0020     		movs	r0, #0
+ 205 0054 FFF7FEFF 		bl	Timer_WriteCounter
+ 206              	.LVL24:
+  64:main.c        ****           CyDelay(500);
+ 207              		.loc 1 64 0
+ 208 0058 FA20     		movs	r0, #250
+ 209 005a 4000     		lsls	r0, r0, #1
+ 210 005c FFF7FEFF 		bl	CyDelay
+ 211              	.LVL25:
+ 212              	.L11:
+  65:main.c        ****         }
+  66:main.c        ****               
+  67:main.c        ****          CyBle_ProcessEvents();  /* Place your application code here.*/
+ 213              		.loc 1 67 0
+ 214 0060 FFF7FEFF 		bl	CyBle_ProcessEvents
+ 215              	.LVL26:
+  68:main.c        ****     }  
+ 216              		.loc 1 68 0
+ 217 0064 DEE7     		b	.L12
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 6
+
+
+ 218              	.L14:
+ 219 0066 C046     		.align	2
+ 220              	.L13:
+ 221 0068 00000000 		.word	stack_handler
+ 222 006c 00000000 		.word	.LANCHOR0
+ 223 0070 00000000 		.word	.LC5
+ 224 0074 10000000 		.word	.LC7
+ 225              		.cfi_endproc
+ 226              	.LFE37:
+ 227              		.size	main, .-main
+ 228              		.global	afstand
+ 229              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 230              		.align	2
+ 231              	.LC5:
+ 232 0000 41667374 		.ascii	"Afstand in cm: \000"
+ 232      616E6420 
+ 232      696E2063 
+ 232      6D3A2000 
+ 233              	.LC7:
+ 234 0010 0A0D00   		.ascii	"\012\015\000"
+ 235              		.bss
+ 236              		.align	1
+ 237              		.set	.LANCHOR0,. + 0
+ 238              		.type	afstand, %object
+ 239              		.size	afstand, 2
+ 240              	afstand:
+ 241 0000 0000     		.space	2
+ 242              		.text
+ 243              	.Letext0:
+ 244              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 245              		.file 3 "Generated_Source\\PSoC4/BLE_StackGatt.h"
+ 246              		.file 4 "Generated_Source\\PSoC4/BLE_StackGattServer.h"
+ 247              		.file 5 "Generated_Source\\PSoC4/BLE_Stack.h"
+ 248              		.file 6 "Generated_Source\\PSoC4/BLE_eventHandler.h"
+ 249              		.file 7 "Generated_Source\\PSoC4/BLE_StackGattDb.h"
+ 250              		.file 8 "Generated_Source\\PSoC4/BLE.h"
+ 251              		.file 9 "Generated_Source\\PSoC4/Rood.h"
+ 252              		.file 10 "Generated_Source\\PSoC4/Blauw.h"
+ 253              		.file 11 "Generated_Source\\PSoC4/cyPm.h"
+ 254              		.file 12 "Generated_Source\\PSoC4/UART.h"
+ 255              		.file 13 "Generated_Source\\PSoC4/PWM.h"
+ 256              		.file 14 "Generated_Source\\PSoC4/Timer.h"
+ 257              		.file 15 "Generated_Source\\PSoC4/Echo.h"
+ 258              		.file 16 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4
+ 259              		.file 17 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 260              		.file 18 "Generated_Source\\PSoC4/CyLib.h"
+ 261              		.section	.debug_info,"",%progbits
+ 262              	.Ldebug_info0:
+ 263 0000 A9060000 		.4byte	0x6a9
+ 264 0004 0400     		.2byte	0x4
+ 265 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 266 000a 04       		.byte	0x4
+ 267 000b 01       		.uleb128 0x1
+ 268 000c 3E010000 		.4byte	.LASF138
+ 269 0010 0C       		.byte	0xc
+ 270 0011 8D090000 		.4byte	.LASF139
+ 271 0015 B3000000 		.4byte	.LASF140
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 7
+
+
+ 272 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 273 001d 00000000 		.4byte	0
+ 274 0021 00000000 		.4byte	.Ldebug_line0
+ 275 0025 02       		.uleb128 0x2
+ 276 0026 01       		.byte	0x1
+ 277 0027 06       		.byte	0x6
+ 278 0028 F8020000 		.4byte	.LASF0
+ 279 002c 02       		.uleb128 0x2
+ 280 002d 01       		.byte	0x1
+ 281 002e 08       		.byte	0x8
+ 282 002f EC090000 		.4byte	.LASF1
+ 283 0033 02       		.uleb128 0x2
+ 284 0034 02       		.byte	0x2
+ 285 0035 05       		.byte	0x5
+ 286 0036 550A0000 		.4byte	.LASF2
+ 287 003a 02       		.uleb128 0x2
+ 288 003b 02       		.byte	0x2
+ 289 003c 07       		.byte	0x7
+ 290 003d 02060000 		.4byte	.LASF3
+ 291 0041 02       		.uleb128 0x2
+ 292 0042 04       		.byte	0x4
+ 293 0043 05       		.byte	0x5
+ 294 0044 35010000 		.4byte	.LASF4
+ 295 0048 02       		.uleb128 0x2
+ 296 0049 04       		.byte	0x4
+ 297 004a 07       		.byte	0x7
+ 298 004b 5B050000 		.4byte	.LASF5
+ 299 004f 02       		.uleb128 0x2
+ 300 0050 08       		.byte	0x8
+ 301 0051 05       		.byte	0x5
+ 302 0052 EA020000 		.4byte	.LASF6
+ 303 0056 02       		.uleb128 0x2
+ 304 0057 08       		.byte	0x8
+ 305 0058 07       		.byte	0x7
+ 306 0059 CC010000 		.4byte	.LASF7
+ 307 005d 03       		.uleb128 0x3
+ 308 005e 04       		.byte	0x4
+ 309 005f 05       		.byte	0x5
+ 310 0060 696E7400 		.ascii	"int\000"
+ 311 0064 02       		.uleb128 0x2
+ 312 0065 04       		.byte	0x4
+ 313 0066 07       		.byte	0x7
+ 314 0067 10050000 		.4byte	.LASF8
+ 315 006b 04       		.uleb128 0x4
+ 316 006c CF030000 		.4byte	.LASF9
+ 317 0070 02       		.byte	0x2
+ 318 0071 E401     		.2byte	0x1e4
+ 319 0073 2C000000 		.4byte	0x2c
+ 320 0077 04       		.uleb128 0x4
+ 321 0078 FA090000 		.4byte	.LASF10
+ 322 007c 02       		.byte	0x2
+ 323 007d E501     		.2byte	0x1e5
+ 324 007f 3A000000 		.4byte	0x3a
+ 325 0083 04       		.uleb128 0x4
+ 326 0084 3A040000 		.4byte	.LASF11
+ 327 0088 02       		.byte	0x2
+ 328 0089 E601     		.2byte	0x1e6
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 8
+
+
+ 329 008b 48000000 		.4byte	0x48
+ 330 008f 02       		.uleb128 0x2
+ 331 0090 04       		.byte	0x4
+ 332 0091 04       		.byte	0x4
+ 333 0092 C9090000 		.4byte	.LASF12
+ 334 0096 02       		.uleb128 0x2
+ 335 0097 08       		.byte	0x8
+ 336 0098 04       		.byte	0x4
+ 337 0099 07040000 		.4byte	.LASF13
+ 338 009d 02       		.uleb128 0x2
+ 339 009e 01       		.byte	0x1
+ 340 009f 08       		.byte	0x8
+ 341 00a0 5B0B0000 		.4byte	.LASF14
+ 342 00a4 02       		.uleb128 0x2
+ 343 00a5 08       		.byte	0x8
+ 344 00a6 04       		.byte	0x4
+ 345 00a7 4F0B0000 		.4byte	.LASF15
+ 346 00ab 02       		.uleb128 0x2
+ 347 00ac 04       		.byte	0x4
+ 348 00ad 07       		.byte	0x7
+ 349 00ae 36080000 		.4byte	.LASF16
+ 350 00b2 05       		.uleb128 0x5
+ 351 00b3 04       		.byte	0x4
+ 352 00b4 06       		.uleb128 0x6
+ 353 00b5 04       		.byte	0x4
+ 354 00b6 6B000000 		.4byte	0x6b
+ 355 00ba 07       		.uleb128 0x7
+ 356 00bb 01       		.byte	0x1
+ 357 00bc 2C000000 		.4byte	0x2c
+ 358 00c0 05       		.byte	0x5
+ 359 00c1 3501     		.2byte	0x135
+ 360 00c3 78020000 		.4byte	0x278
+ 361 00c7 08       		.uleb128 0x8
+ 362 00c8 15060000 		.4byte	.LASF17
+ 363 00cc 00       		.byte	0
+ 364 00cd 08       		.uleb128 0x8
+ 365 00ce 04030000 		.4byte	.LASF18
+ 366 00d2 01       		.byte	0x1
+ 367 00d3 08       		.uleb128 0x8
+ 368 00d4 23010000 		.4byte	.LASF19
+ 369 00d8 02       		.byte	0x2
+ 370 00d9 08       		.uleb128 0x8
+ 371 00da 0E0C0000 		.4byte	.LASF20
+ 372 00de 03       		.byte	0x3
+ 373 00df 08       		.uleb128 0x8
+ 374 00e0 F6010000 		.4byte	.LASF21
+ 375 00e4 04       		.byte	0x4
+ 376 00e5 08       		.uleb128 0x8
+ 377 00e6 1E000000 		.4byte	.LASF22
+ 378 00ea 05       		.byte	0x5
+ 379 00eb 08       		.uleb128 0x8
+ 380 00ec 4A060000 		.4byte	.LASF23
+ 381 00f0 06       		.byte	0x6
+ 382 00f1 08       		.uleb128 0x8
+ 383 00f2 98070000 		.4byte	.LASF24
+ 384 00f6 20       		.byte	0x20
+ 385 00f7 08       		.uleb128 0x8
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 9
+
+
+ 386 00f8 40030000 		.4byte	.LASF25
+ 387 00fc 21       		.byte	0x21
+ 388 00fd 08       		.uleb128 0x8
+ 389 00fe 94060000 		.4byte	.LASF26
+ 390 0102 22       		.byte	0x22
+ 391 0103 08       		.uleb128 0x8
+ 392 0104 1A070000 		.4byte	.LASF27
+ 393 0108 23       		.byte	0x23
+ 394 0109 08       		.uleb128 0x8
+ 395 010a 1E090000 		.4byte	.LASF28
+ 396 010e 24       		.byte	0x24
+ 397 010f 08       		.uleb128 0x8
+ 398 0110 77080000 		.4byte	.LASF29
+ 399 0114 25       		.byte	0x25
+ 400 0115 08       		.uleb128 0x8
+ 401 0116 A7030000 		.4byte	.LASF30
+ 402 011a 26       		.byte	0x26
+ 403 011b 08       		.uleb128 0x8
+ 404 011c B8060000 		.4byte	.LASF31
+ 405 0120 27       		.byte	0x27
+ 406 0121 08       		.uleb128 0x8
+ 407 0122 7F0B0000 		.4byte	.LASF32
+ 408 0126 28       		.byte	0x28
+ 409 0127 08       		.uleb128 0x8
+ 410 0128 64020000 		.4byte	.LASF33
+ 411 012c 29       		.byte	0x29
+ 412 012d 08       		.uleb128 0x8
+ 413 012e 8A000000 		.4byte	.LASF34
+ 414 0132 2A       		.byte	0x2a
+ 415 0133 08       		.uleb128 0x8
+ 416 0134 17030000 		.4byte	.LASF35
+ 417 0138 2B       		.byte	0x2b
+ 418 0139 08       		.uleb128 0x8
+ 419 013a C10C0000 		.4byte	.LASF36
+ 420 013e 2C       		.byte	0x2c
+ 421 013f 08       		.uleb128 0x8
+ 422 0140 86020000 		.4byte	.LASF37
+ 423 0144 2D       		.byte	0x2d
+ 424 0145 08       		.uleb128 0x8
+ 425 0146 010A0000 		.4byte	.LASF38
+ 426 014a 2E       		.byte	0x2e
+ 427 014b 08       		.uleb128 0x8
+ 428 014c 270C0000 		.4byte	.LASF39
+ 429 0150 2F       		.byte	0x2f
+ 430 0151 08       		.uleb128 0x8
+ 431 0152 DD080000 		.4byte	.LASF40
+ 432 0156 30       		.byte	0x30
+ 433 0157 08       		.uleb128 0x8
+ 434 0158 310D0000 		.4byte	.LASF41
+ 435 015c 31       		.byte	0x31
+ 436 015d 08       		.uleb128 0x8
+ 437 015e BC080000 		.4byte	.LASF42
+ 438 0162 32       		.byte	0x32
+ 439 0163 08       		.uleb128 0x8
+ 440 0164 080B0000 		.4byte	.LASF43
+ 441 0168 33       		.byte	0x33
+ 442 0169 08       		.uleb128 0x8
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 10
+
+
+ 443 016a 6D050000 		.4byte	.LASF44
+ 444 016e 34       		.byte	0x34
+ 445 016f 08       		.uleb128 0x8
+ 446 0170 87040000 		.4byte	.LASF45
+ 447 0174 35       		.byte	0x35
+ 448 0175 08       		.uleb128 0x8
+ 449 0176 E1060000 		.4byte	.LASF46
+ 450 017a 36       		.byte	0x36
+ 451 017b 08       		.uleb128 0x8
+ 452 017c C2070000 		.4byte	.LASF47
+ 453 0180 37       		.byte	0x37
+ 454 0181 08       		.uleb128 0x8
+ 455 0182 EE0A0000 		.4byte	.LASF48
+ 456 0186 40       		.byte	0x40
+ 457 0187 08       		.uleb128 0x8
+ 458 0188 40070000 		.4byte	.LASF49
+ 459 018c 41       		.byte	0x41
+ 460 018d 08       		.uleb128 0x8
+ 461 018e 710D0000 		.4byte	.LASF50
+ 462 0192 42       		.byte	0x42
+ 463 0193 08       		.uleb128 0x8
+ 464 0194 580C0000 		.4byte	.LASF51
+ 465 0198 43       		.byte	0x43
+ 466 0199 08       		.uleb128 0x8
+ 467 019a 9F050000 		.4byte	.LASF52
+ 468 019e 44       		.byte	0x44
+ 469 019f 08       		.uleb128 0x8
+ 470 01a0 A2090000 		.4byte	.LASF53
+ 471 01a4 45       		.byte	0x45
+ 472 01a5 08       		.uleb128 0x8
+ 473 01a6 15080000 		.4byte	.LASF54
+ 474 01aa 46       		.byte	0x46
+ 475 01ab 08       		.uleb128 0x8
+ 476 01ac 2C060000 		.4byte	.LASF55
+ 477 01b0 47       		.byte	0x47
+ 478 01b1 08       		.uleb128 0x8
+ 479 01b2 9A0C0000 		.4byte	.LASF56
+ 480 01b6 48       		.byte	0x48
+ 481 01b7 08       		.uleb128 0x8
+ 482 01b8 57030000 		.4byte	.LASF57
+ 483 01bc 49       		.byte	0x49
+ 484 01bd 08       		.uleb128 0x8
+ 485 01be 00000000 		.4byte	.LASF58
+ 486 01c2 4A       		.byte	0x4a
+ 487 01c3 08       		.uleb128 0x8
+ 488 01c4 600B0000 		.4byte	.LASF59
+ 489 01c8 4B       		.byte	0x4b
+ 490 01c9 08       		.uleb128 0x8
+ 491 01ca 85050000 		.4byte	.LASF60
+ 492 01ce 4C       		.byte	0x4c
+ 493 01cf 08       		.uleb128 0x8
+ 494 01d0 A2080000 		.4byte	.LASF61
+ 495 01d4 4D       		.byte	0x4d
+ 496 01d5 08       		.uleb128 0x8
+ 497 01d6 70030000 		.4byte	.LASF62
+ 498 01da 4E       		.byte	0x4e
+ 499 01db 08       		.uleb128 0x8
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 11
+
+
+ 500 01dc A80A0000 		.4byte	.LASF63
+ 501 01e0 4F       		.byte	0x4f
+ 502 01e1 08       		.uleb128 0x8
+ 503 01e2 04010000 		.4byte	.LASF64
+ 504 01e6 50       		.byte	0x50
+ 505 01e7 08       		.uleb128 0x8
+ 506 01e8 D5030000 		.4byte	.LASF65
+ 507 01ec 51       		.byte	0x51
+ 508 01ed 08       		.uleb128 0x8
+ 509 01ee 3A090000 		.4byte	.LASF66
+ 510 01f2 52       		.byte	0x52
+ 511 01f3 08       		.uleb128 0x8
+ 512 01f4 5F0A0000 		.4byte	.LASF67
+ 513 01f8 53       		.byte	0x53
+ 514 01f9 08       		.uleb128 0x8
+ 515 01fa CD0A0000 		.4byte	.LASF68
+ 516 01fe 54       		.byte	0x54
+ 517 01ff 08       		.uleb128 0x8
+ 518 0200 BD050000 		.4byte	.LASF69
+ 519 0204 55       		.byte	0x55
+ 520 0205 08       		.uleb128 0x8
+ 521 0206 EE040000 		.4byte	.LASF70
+ 522 020a 56       		.byte	0x56
+ 523 020b 08       		.uleb128 0x8
+ 524 020c B10B0000 		.4byte	.LASF71
+ 525 0210 57       		.byte	0x57
+ 526 0211 08       		.uleb128 0x8
+ 527 0212 CB040000 		.4byte	.LASF72
+ 528 0216 58       		.byte	0x58
+ 529 0217 08       		.uleb128 0x8
+ 530 0218 3E020000 		.4byte	.LASF73
+ 531 021c 70       		.byte	0x70
+ 532 021d 08       		.uleb128 0x8
+ 533 021e 060D0000 		.4byte	.LASF74
+ 534 0222 71       		.byte	0x71
+ 535 0223 08       		.uleb128 0x8
+ 536 0224 7C070000 		.4byte	.LASF75
+ 537 0228 72       		.byte	0x72
+ 538 0229 08       		.uleb128 0x8
+ 539 022a F7070000 		.4byte	.LASF76
+ 540 022e 73       		.byte	0x73
+ 541 022f 08       		.uleb128 0x8
+ 542 0230 6C000000 		.4byte	.LASF77
+ 543 0234 74       		.byte	0x74
+ 544 0235 08       		.uleb128 0x8
+ 545 0236 E50C0000 		.4byte	.LASF78
+ 546 023a 75       		.byte	0x75
+ 547 023b 08       		.uleb128 0x8
+ 548 023c E1050000 		.4byte	.LASF79
+ 549 0240 76       		.byte	0x76
+ 550 0241 08       		.uleb128 0x8
+ 551 0242 63060000 		.4byte	.LASF80
+ 552 0246 77       		.byte	0x77
+ 553 0247 08       		.uleb128 0x8
+ 554 0248 AF020000 		.4byte	.LASF81
+ 555 024c 78       		.byte	0x78
+ 556 024d 08       		.uleb128 0x8
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 12
+
+
+ 557 024e EB0B0000 		.4byte	.LASF82
+ 558 0252 79       		.byte	0x79
+ 559 0253 08       		.uleb128 0x8
+ 560 0254 63040000 		.4byte	.LASF83
+ 561 0258 7A       		.byte	0x7a
+ 562 0259 08       		.uleb128 0x8
+ 563 025a 16020000 		.4byte	.LASF84
+ 564 025e FA       		.byte	0xfa
+ 565 025f 08       		.uleb128 0x8
+ 566 0260 1D050000 		.4byte	.LASF85
+ 567 0264 FB       		.byte	0xfb
+ 568 0265 08       		.uleb128 0x8
+ 569 0266 960A0000 		.4byte	.LASF86
+ 570 026a FC       		.byte	0xfc
+ 571 026b 08       		.uleb128 0x8
+ 572 026c 8F0D0000 		.4byte	.LASF87
+ 573 0270 FD       		.byte	0xfd
+ 574 0271 08       		.uleb128 0x8
+ 575 0272 41040000 		.4byte	.LASF88
+ 576 0276 FF       		.byte	0xff
+ 577 0277 00       		.byte	0
+ 578 0278 04       		.uleb128 0x4
+ 579 0279 550D0000 		.4byte	.LASF89
+ 580 027d 03       		.byte	0x3
+ 581 027e 8901     		.2byte	0x189
+ 582 0280 77000000 		.4byte	0x77
+ 583 0284 09       		.uleb128 0x9
+ 584 0285 02       		.byte	0x2
+ 585 0286 03       		.byte	0x3
+ 586 0287 9301     		.2byte	0x193
+ 587 0289 A8020000 		.4byte	0x2a8
+ 588 028d 0A       		.uleb128 0xa
+ 589 028e 4F040000 		.4byte	.LASF90
+ 590 0292 03       		.byte	0x3
+ 591 0293 9A01     		.2byte	0x19a
+ 592 0295 6B000000 		.4byte	0x6b
+ 593 0299 00       		.byte	0
+ 594 029a 0A       		.uleb128 0xa
+ 595 029b BC070000 		.4byte	.LASF91
+ 596 029f 03       		.byte	0x3
+ 597 02a0 A001     		.2byte	0x1a0
+ 598 02a2 6B000000 		.4byte	0x6b
+ 599 02a6 01       		.byte	0x1
+ 600 02a7 00       		.byte	0
+ 601 02a8 04       		.uleb128 0x4
+ 602 02a9 58000000 		.4byte	.LASF92
+ 603 02ad 03       		.byte	0x3
+ 604 02ae A201     		.2byte	0x1a2
+ 605 02b0 84020000 		.4byte	0x284
+ 606 02b4 09       		.uleb128 0x9
+ 607 02b5 08       		.byte	0x8
+ 608 02b6 03       		.byte	0x3
+ 609 02b7 BE01     		.2byte	0x1be
+ 610 02b9 E5020000 		.4byte	0x2e5
+ 611 02bd 0B       		.uleb128 0xb
+ 612 02be 76616C00 		.ascii	"val\000"
+ 613 02c2 03       		.byte	0x3
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 13
+
+
+ 614 02c3 C101     		.2byte	0x1c1
+ 615 02c5 B4000000 		.4byte	0xb4
+ 616 02c9 00       		.byte	0
+ 617 02ca 0B       		.uleb128 0xb
+ 618 02cb 6C656E00 		.ascii	"len\000"
+ 619 02cf 03       		.byte	0x3
+ 620 02d0 C401     		.2byte	0x1c4
+ 621 02d2 77000000 		.4byte	0x77
+ 622 02d6 04       		.byte	0x4
+ 623 02d7 0A       		.uleb128 0xa
+ 624 02d8 36030000 		.4byte	.LASF93
+ 625 02dc 03       		.byte	0x3
+ 626 02dd CB01     		.2byte	0x1cb
+ 627 02df 77000000 		.4byte	0x77
+ 628 02e3 06       		.byte	0x6
+ 629 02e4 00       		.byte	0
+ 630 02e5 04       		.uleb128 0x4
+ 631 02e6 E3010000 		.4byte	.LASF94
+ 632 02ea 03       		.byte	0x3
+ 633 02eb CD01     		.2byte	0x1cd
+ 634 02ed B4020000 		.4byte	0x2b4
+ 635 02f1 09       		.uleb128 0x9
+ 636 02f2 0C       		.byte	0xc
+ 637 02f3 03       		.byte	0x3
+ 638 02f4 D001     		.2byte	0x1d0
+ 639 02f6 15030000 		.4byte	0x315
+ 640 02fa 0A       		.uleb128 0xa
+ 641 02fb C70A0000 		.4byte	.LASF95
+ 642 02ff 03       		.byte	0x3
+ 643 0300 D301     		.2byte	0x1d3
+ 644 0302 E5020000 		.4byte	0x2e5
+ 645 0306 00       		.byte	0
+ 646 0307 0A       		.uleb128 0xa
+ 647 0308 58040000 		.4byte	.LASF96
+ 648 030c 03       		.byte	0x3
+ 649 030d D601     		.2byte	0x1d6
+ 650 030f 78020000 		.4byte	0x278
+ 651 0313 08       		.byte	0x8
+ 652 0314 00       		.byte	0
+ 653 0315 04       		.uleb128 0x4
+ 654 0316 6E090000 		.4byte	.LASF97
+ 655 031a 03       		.byte	0x3
+ 656 031b D801     		.2byte	0x1d8
+ 657 031d F1020000 		.4byte	0x2f1
+ 658 0321 0C       		.uleb128 0xc
+ 659 0322 3F080000 		.4byte	.LASF98
+ 660 0326 04       		.byte	0x4
+ 661 0327 34       		.byte	0x34
+ 662 0328 15030000 		.4byte	0x315
+ 663 032c 07       		.uleb128 0x7
+ 664 032d 01       		.byte	0x1
+ 665 032e 2C000000 		.4byte	0x2c
+ 666 0332 06       		.byte	0x6
+ 667 0333 A808     		.2byte	0x8a8
+ 668 0335 64030000 		.4byte	0x364
+ 669 0339 08       		.uleb128 0x8
+ 670 033a 3A000000 		.4byte	.LASF99
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 14
+
+
+ 671 033e 00       		.byte	0
+ 672 033f 08       		.uleb128 0x8
+ 673 0340 5E080000 		.4byte	.LASF100
+ 674 0344 01       		.byte	0x1
+ 675 0345 08       		.uleb128 0x8
+ 676 0346 800A0000 		.4byte	.LASF101
+ 677 034a 02       		.byte	0x2
+ 678 034b 08       		.uleb128 0x8
+ 679 034c D2020000 		.4byte	.LASF102
+ 680 0350 03       		.byte	0x3
+ 681 0351 08       		.uleb128 0x8
+ 682 0352 25040000 		.4byte	.LASF103
+ 683 0356 04       		.byte	0x4
+ 684 0357 08       		.uleb128 0x8
+ 685 0358 3E0A0000 		.4byte	.LASF104
+ 686 035c 05       		.byte	0x5
+ 687 035d 08       		.uleb128 0x8
+ 688 035e 8E030000 		.4byte	.LASF105
+ 689 0362 06       		.byte	0x6
+ 690 0363 00       		.byte	0
+ 691 0364 04       		.uleb128 0x4
+ 692 0365 810C0000 		.4byte	.LASF106
+ 693 0369 06       		.byte	0x6
+ 694 036a B608     		.2byte	0x8b6
+ 695 036c 2C030000 		.4byte	0x32c
+ 696 0370 07       		.uleb128 0x7
+ 697 0371 01       		.byte	0x1
+ 698 0372 2C000000 		.4byte	0x2c
+ 699 0376 06       		.byte	0x6
+ 700 0377 EB08     		.2byte	0x8eb
+ 701 0379 9C030000 		.4byte	0x39c
+ 702 037d 08       		.uleb128 0x8
+ 703 037e 400B0000 		.4byte	.LASF107
+ 704 0382 00       		.byte	0
+ 705 0383 08       		.uleb128 0x8
+ 706 0384 A10B0000 		.4byte	.LASF108
+ 707 0388 01       		.byte	0x1
+ 708 0389 08       		.uleb128 0x8
+ 709 038a 5B090000 		.4byte	.LASF109
+ 710 038e 02       		.byte	0x2
+ 711 038f 08       		.uleb128 0x8
+ 712 0390 0E040000 		.4byte	.LASF110
+ 713 0394 02       		.byte	0x2
+ 714 0395 08       		.uleb128 0x8
+ 715 0396 2F0B0000 		.4byte	.LASF111
+ 716 039a 03       		.byte	0x3
+ 717 039b 00       		.byte	0
+ 718 039c 0D       		.uleb128 0xd
+ 719 039d 94090000 		.4byte	.LASF141
+ 720 03a1 01       		.byte	0x1
+ 721 03a2 07       		.byte	0x7
+ 722 03a3 00000000 		.4byte	.LFB36
+ 723 03a7 7C000000 		.4byte	.LFE36-.LFB36
+ 724 03ab 01       		.uleb128 0x1
+ 725 03ac 9C       		.byte	0x9c
+ 726 03ad 77040000 		.4byte	0x477
+ 727 03b1 0E       		.uleb128 0xe
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 15
+
+
+ 728 03b2 34020000 		.4byte	.LASF112
+ 729 03b6 01       		.byte	0x1
+ 730 03b7 07       		.byte	0x7
+ 731 03b8 83000000 		.4byte	0x83
+ 732 03bc 00000000 		.4byte	.LLST0
+ 733 03c0 0E       		.uleb128 0xe
+ 734 03c1 760C0000 		.4byte	.LASF113
+ 735 03c5 01       		.byte	0x1
+ 736 03c6 07       		.byte	0x7
+ 737 03c7 B2000000 		.4byte	0xb2
+ 738 03cb 2C000000 		.4byte	.LLST1
+ 739 03cf 0F       		.uleb128 0xf
+ 740 03d0 E60B0000 		.4byte	.LASF114
+ 741 03d4 01       		.byte	0x1
+ 742 03d5 09       		.byte	0x9
+ 743 03d6 21030000 		.4byte	0x321
+ 744 03da 02       		.uleb128 0x2
+ 745 03db 91       		.byte	0x91
+ 746 03dc 6C       		.sleb128 -20
+ 747 03dd 10       		.uleb128 0x10
+ 748 03de 1E000000 		.4byte	.LVL3
+ 749 03e2 D0050000 		.4byte	0x5d0
+ 750 03e6 FB030000 		.4byte	0x3fb
+ 751 03ea 11       		.uleb128 0x11
+ 752 03eb 01       		.uleb128 0x1
+ 753 03ec 50       		.byte	0x50
+ 754 03ed 02       		.uleb128 0x2
+ 755 03ee 91       		.byte	0x91
+ 756 03ef 6C       		.sleb128 -20
+ 757 03f0 11       		.uleb128 0x11
+ 758 03f1 01       		.uleb128 0x1
+ 759 03f2 51       		.byte	0x51
+ 760 03f3 01       		.uleb128 0x1
+ 761 03f4 30       		.byte	0x30
+ 762 03f5 11       		.uleb128 0x11
+ 763 03f6 01       		.uleb128 0x1
+ 764 03f7 53       		.byte	0x53
+ 765 03f8 01       		.uleb128 0x1
+ 766 03f9 30       		.byte	0x30
+ 767 03fa 00       		.byte	0
+ 768 03fb 10       		.uleb128 0x10
+ 769 03fc 3A000000 		.4byte	.LVL4
+ 770 0400 DC050000 		.4byte	0x5dc
+ 771 0404 0E040000 		.4byte	0x40e
+ 772 0408 11       		.uleb128 0x11
+ 773 0409 01       		.uleb128 0x1
+ 774 040a 50       		.byte	0x50
+ 775 040b 01       		.uleb128 0x1
+ 776 040c 30       		.byte	0x30
+ 777 040d 00       		.byte	0
+ 778 040e 10       		.uleb128 0x10
+ 779 040f 42000000 		.4byte	.LVL5
+ 780 0413 E8050000 		.4byte	0x5e8
+ 781 0417 21040000 		.4byte	0x421
+ 782 041b 11       		.uleb128 0x11
+ 783 041c 01       		.uleb128 0x1
+ 784 041d 50       		.byte	0x50
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 16
+
+
+ 785 041e 01       		.uleb128 0x1
+ 786 041f 30       		.byte	0x30
+ 787 0420 00       		.byte	0
+ 788 0421 10       		.uleb128 0x10
+ 789 0422 48000000 		.4byte	.LVL6
+ 790 0426 F3050000 		.4byte	0x5f3
+ 791 042a 34040000 		.4byte	0x434
+ 792 042e 11       		.uleb128 0x11
+ 793 042f 01       		.uleb128 0x1
+ 794 0430 50       		.byte	0x50
+ 795 0431 01       		.uleb128 0x1
+ 796 0432 31       		.byte	0x31
+ 797 0433 00       		.byte	0
+ 798 0434 10       		.uleb128 0x10
+ 799 0435 50000000 		.4byte	.LVL7
+ 800 0439 E8050000 		.4byte	0x5e8
+ 801 043d 47040000 		.4byte	0x447
+ 802 0441 11       		.uleb128 0x11
+ 803 0442 01       		.uleb128 0x1
+ 804 0443 50       		.byte	0x50
+ 805 0444 01       		.uleb128 0x1
+ 806 0445 31       		.byte	0x31
+ 807 0446 00       		.byte	0
+ 808 0447 10       		.uleb128 0x10
+ 809 0448 56000000 		.4byte	.LVL8
+ 810 044c F3050000 		.4byte	0x5f3
+ 811 0450 5A040000 		.4byte	0x45a
+ 812 0454 11       		.uleb128 0x11
+ 813 0455 01       		.uleb128 0x1
+ 814 0456 50       		.byte	0x50
+ 815 0457 01       		.uleb128 0x1
+ 816 0458 30       		.byte	0x30
+ 817 0459 00       		.byte	0
+ 818 045a 10       		.uleb128 0x10
+ 819 045b 66000000 		.4byte	.LVL9
+ 820 045f FE050000 		.4byte	0x5fe
+ 821 0463 6D040000 		.4byte	0x46d
+ 822 0467 11       		.uleb128 0x11
+ 823 0468 01       		.uleb128 0x1
+ 824 0469 50       		.byte	0x50
+ 825 046a 01       		.uleb128 0x1
+ 826 046b 31       		.byte	0x31
+ 827 046c 00       		.byte	0
+ 828 046d 12       		.uleb128 0x12
+ 829 046e 6A000000 		.4byte	.LVL10
+ 830 0472 09060000 		.4byte	0x609
+ 831 0476 00       		.byte	0
+ 832 0477 13       		.uleb128 0x13
+ 833 0478 2C0D0000 		.4byte	.LASF142
+ 834 047c 01       		.byte	0x1
+ 835 047d 29       		.byte	0x29
+ 836 047e 5D000000 		.4byte	0x5d
+ 837 0482 00000000 		.4byte	.LFB37
+ 838 0486 78000000 		.4byte	.LFE37-.LFB37
+ 839 048a 01       		.uleb128 0x1
+ 840 048b 9C       		.byte	0x9c
+ 841 048c 97050000 		.4byte	0x597
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 17
+
+
+ 842 0490 0F       		.uleb128 0xf
+ 843 0491 FD000000 		.4byte	.LASF115
+ 844 0495 01       		.byte	0x1
+ 845 0496 35       		.byte	0x35
+ 846 0497 97050000 		.4byte	0x597
+ 847 049b 02       		.uleb128 0x2
+ 848 049c 91       		.byte	0x91
+ 849 049d 74       		.sleb128 -12
+ 850 049e 12       		.uleb128 0x12
+ 851 049f 0A000000 		.4byte	.LVL12
+ 852 04a3 14060000 		.4byte	0x614
+ 853 04a7 12       		.uleb128 0x12
+ 854 04a8 0E000000 		.4byte	.LVL13
+ 855 04ac 1F060000 		.4byte	0x61f
+ 856 04b0 12       		.uleb128 0x12
+ 857 04b1 12000000 		.4byte	.LVL14
+ 858 04b5 2B060000 		.4byte	0x62b
+ 859 04b9 10       		.uleb128 0x10
+ 860 04ba 18000000 		.4byte	.LVL15
+ 861 04be 37060000 		.4byte	0x637
+ 862 04c2 CD040000 		.4byte	0x4cd
+ 863 04c6 11       		.uleb128 0x11
+ 864 04c7 01       		.uleb128 0x1
+ 865 04c8 50       		.byte	0x50
+ 866 04c9 02       		.uleb128 0x2
+ 867 04ca 08       		.byte	0x8
+ 868 04cb FF       		.byte	0xff
+ 869 04cc 00       		.byte	0
+ 870 04cd 10       		.uleb128 0x10
+ 871 04ce 1E000000 		.4byte	.LVL16
+ 872 04d2 43060000 		.4byte	0x643
+ 873 04d6 E1040000 		.4byte	0x4e1
+ 874 04da 11       		.uleb128 0x11
+ 875 04db 01       		.uleb128 0x1
+ 876 04dc 50       		.byte	0x50
+ 877 04dd 02       		.uleb128 0x2
+ 878 04de 08       		.byte	0x8
+ 879 04df 7F       		.byte	0x7f
+ 880 04e0 00       		.byte	0
+ 881 04e1 10       		.uleb128 0x10
+ 882 04e2 24000000 		.4byte	.LVL17
+ 883 04e6 4F060000 		.4byte	0x64f
+ 884 04ea F8040000 		.4byte	0x4f8
+ 885 04ee 11       		.uleb128 0x11
+ 886 04ef 01       		.uleb128 0x1
+ 887 04f0 50       		.byte	0x50
+ 888 04f1 05       		.uleb128 0x5
+ 889 04f2 03       		.byte	0x3
+ 890 04f3 00000000 		.4byte	stack_handler
+ 891 04f7 00       		.byte	0
+ 892 04f8 12       		.uleb128 0x12
+ 893 04f9 28000000 		.4byte	.LVL18
+ 894 04fd 5B060000 		.4byte	0x65b
+ 895 0501 12       		.uleb128 0x12
+ 896 0502 30000000 		.4byte	.LVL19
+ 897 0506 66060000 		.4byte	0x666
+ 898 050a 10       		.uleb128 0x10
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 18
+
+
+ 899 050b 40000000 		.4byte	.LVL20
+ 900 050f 72060000 		.4byte	0x672
+ 901 0513 23050000 		.4byte	0x523
+ 902 0517 11       		.uleb128 0x11
+ 903 0518 01       		.uleb128 0x1
+ 904 0519 51       		.byte	0x51
+ 905 051a 02       		.uleb128 0x2
+ 906 051b 91       		.byte	0x91
+ 907 051c 74       		.sleb128 -12
+ 908 051d 11       		.uleb128 0x11
+ 909 051e 01       		.uleb128 0x1
+ 910 051f 52       		.byte	0x52
+ 911 0520 01       		.uleb128 0x1
+ 912 0521 3A       		.byte	0x3a
+ 913 0522 00       		.byte	0
+ 914 0523 10       		.uleb128 0x10
+ 915 0524 46000000 		.4byte	.LVL21
+ 916 0528 7D060000 		.4byte	0x67d
+ 917 052c 3A050000 		.4byte	0x53a
+ 918 0530 11       		.uleb128 0x11
+ 919 0531 01       		.uleb128 0x1
+ 920 0532 50       		.byte	0x50
+ 921 0533 05       		.uleb128 0x5
+ 922 0534 03       		.byte	0x3
+ 923 0535 00000000 		.4byte	.LC5
+ 924 0539 00       		.byte	0
+ 925 053a 10       		.uleb128 0x10
+ 926 053b 4C000000 		.4byte	.LVL22
+ 927 053f 7D060000 		.4byte	0x67d
+ 928 0543 4E050000 		.4byte	0x54e
+ 929 0547 11       		.uleb128 0x11
+ 930 0548 01       		.uleb128 0x1
+ 931 0549 50       		.byte	0x50
+ 932 054a 02       		.uleb128 0x2
+ 933 054b 91       		.byte	0x91
+ 934 054c 74       		.sleb128 -12
+ 935 054d 00       		.byte	0
+ 936 054e 10       		.uleb128 0x10
+ 937 054f 52000000 		.4byte	.LVL23
+ 938 0553 7D060000 		.4byte	0x67d
+ 939 0557 65050000 		.4byte	0x565
+ 940 055b 11       		.uleb128 0x11
+ 941 055c 01       		.uleb128 0x1
+ 942 055d 50       		.byte	0x50
+ 943 055e 05       		.uleb128 0x5
+ 944 055f 03       		.byte	0x3
+ 945 0560 10000000 		.4byte	.LC7
+ 946 0564 00       		.byte	0
+ 947 0565 10       		.uleb128 0x10
+ 948 0566 58000000 		.4byte	.LVL24
+ 949 056a 89060000 		.4byte	0x689
+ 950 056e 78050000 		.4byte	0x578
+ 951 0572 11       		.uleb128 0x11
+ 952 0573 01       		.uleb128 0x1
+ 953 0574 50       		.byte	0x50
+ 954 0575 01       		.uleb128 0x1
+ 955 0576 30       		.byte	0x30
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 19
+
+
+ 956 0577 00       		.byte	0
+ 957 0578 10       		.uleb128 0x10
+ 958 0579 60000000 		.4byte	.LVL25
+ 959 057d 95060000 		.4byte	0x695
+ 960 0581 8D050000 		.4byte	0x58d
+ 961 0585 11       		.uleb128 0x11
+ 962 0586 01       		.uleb128 0x1
+ 963 0587 50       		.byte	0x50
+ 964 0588 03       		.uleb128 0x3
+ 965 0589 0A       		.byte	0xa
+ 966 058a F401     		.2byte	0x1f4
+ 967 058c 00       		.byte	0
+ 968 058d 12       		.uleb128 0x12
+ 969 058e 64000000 		.4byte	.LVL26
+ 970 0592 A0060000 		.4byte	0x6a0
+ 971 0596 00       		.byte	0
+ 972 0597 14       		.uleb128 0x14
+ 973 0598 9D000000 		.4byte	0x9d
+ 974 059c A7050000 		.4byte	0x5a7
+ 975 05a0 15       		.uleb128 0x15
+ 976 05a1 AB000000 		.4byte	0xab
+ 977 05a5 00       		.byte	0
+ 978 05a6 00       		.byte	0
+ 979 05a7 16       		.uleb128 0x16
+ 980 05a8 0E070000 		.4byte	.LASF116
+ 981 05ac 06       		.byte	0x6
+ 982 05ad 160B     		.2byte	0xb16
+ 983 05af 64030000 		.4byte	0x364
+ 984 05b3 16       		.uleb128 0x16
+ 985 05b4 91080000 		.4byte	.LASF117
+ 986 05b8 06       		.byte	0x6
+ 987 05b9 170B     		.2byte	0xb17
+ 988 05bb A8020000 		.4byte	0x2a8
+ 989 05bf 17       		.uleb128 0x17
+ 990 05c0 A4040000 		.4byte	.LASF118
+ 991 05c4 01       		.byte	0x1
+ 992 05c5 05       		.byte	0x5
+ 993 05c6 33000000 		.4byte	0x33
+ 994 05ca 05       		.uleb128 0x5
+ 995 05cb 03       		.byte	0x3
+ 996 05cc 00000000 		.4byte	afstand
+ 997 05d0 18       		.uleb128 0x18
+ 998 05d1 AC040000 		.4byte	.LASF119
+ 999 05d5 AC040000 		.4byte	.LASF119
+ 1000 05d9 07       		.byte	0x7
+ 1001 05da 8401     		.2byte	0x184
+ 1002 05dc 18       		.uleb128 0x18
+ 1003 05dd CF090000 		.4byte	.LASF120
+ 1004 05e1 CF090000 		.4byte	.LASF120
+ 1005 05e5 08       		.byte	0x8
+ 1006 05e6 8102     		.2byte	0x281
+ 1007 05e8 19       		.uleb128 0x19
+ 1008 05e9 8F0C0000 		.4byte	.LASF121
+ 1009 05ed 8F0C0000 		.4byte	.LASF121
+ 1010 05f1 09       		.byte	0x9
+ 1011 05f2 33       		.byte	0x33
+ 1012 05f3 19       		.uleb128 0x19
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 20
+
+
+ 1013 05f4 FE080000 		.4byte	.LASF122
+ 1014 05f8 FE080000 		.4byte	.LASF122
+ 1015 05fc 0A       		.byte	0xa
+ 1016 05fd 33       		.byte	0x33
+ 1017 05fe 19       		.uleb128 0x19
+ 1018 05ff 250A0000 		.4byte	.LASF123
+ 1019 0603 250A0000 		.4byte	.LASF123
+ 1020 0607 0B       		.byte	0xb
+ 1021 0608 5F       		.byte	0x5f
+ 1022 0609 19       		.uleb128 0x19
+ 1023 060a DA0B0000 		.4byte	.LASF124
+ 1024 060e DA0B0000 		.4byte	.LASF124
+ 1025 0612 0B       		.byte	0xb
+ 1026 0613 5E       		.byte	0x5e
+ 1027 0614 19       		.uleb128 0x19
+ 1028 0615 0B020000 		.4byte	.LASF125
+ 1029 0619 0B020000 		.4byte	.LASF125
+ 1030 061d 0C       		.byte	0xc
+ 1031 061e 72       		.byte	0x72
+ 1032 061f 18       		.uleb128 0x18
+ 1033 0620 D7060000 		.4byte	.LASF126
+ 1034 0624 D7060000 		.4byte	.LASF126
+ 1035 0628 0D       		.byte	0xd
+ 1036 0629 3201     		.2byte	0x132
+ 1037 062b 18       		.uleb128 0x18
+ 1038 062c 3C050000 		.4byte	.LASF127
+ 1039 0630 3C050000 		.4byte	.LASF127
+ 1040 0634 0E       		.byte	0xe
+ 1041 0635 3201     		.2byte	0x132
+ 1042 0637 18       		.uleb128 0x18
+ 1043 0638 6C070000 		.4byte	.LASF128
+ 1044 063c 6C070000 		.4byte	.LASF128
+ 1045 0640 0D       		.byte	0xd
+ 1046 0641 5001     		.2byte	0x150
+ 1047 0643 18       		.uleb128 0x18
+ 1048 0644 5B070000 		.4byte	.LASF129
+ 1049 0648 5B070000 		.4byte	.LASF129
+ 1050 064c 0D       		.byte	0xd
+ 1051 064d 5501     		.2byte	0x155
+ 1052 064f 18       		.uleb128 0x18
+ 1053 0650 02070000 		.4byte	.LASF130
+ 1054 0654 02070000 		.4byte	.LASF130
+ 1055 0658 08       		.byte	0x8
+ 1056 0659 7102     		.2byte	0x271
+ 1057 065b 19       		.uleb128 0x19
+ 1058 065c 4E000000 		.4byte	.LASF131
+ 1059 0660 4E000000 		.4byte	.LASF131
+ 1060 0664 0F       		.byte	0xf
+ 1061 0665 32       		.byte	0x32
+ 1062 0666 18       		.uleb128 0x18
+ 1063 0667 82060000 		.4byte	.LASF132
+ 1064 066b 82060000 		.4byte	.LASF132
+ 1065 066f 0E       		.byte	0xe
+ 1066 0670 4B01     		.2byte	0x14b
+ 1067 0672 19       		.uleb128 0x19
+ 1068 0673 81020000 		.4byte	.LASF133
+ 1069 0677 81020000 		.4byte	.LASF133
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 21
+
+
+ 1070 067b 10       		.byte	0x10
+ 1071 067c CB       		.byte	0xcb
+ 1072 067d 18       		.uleb128 0x18
+ 1073 067e 48050000 		.4byte	.LASF134
+ 1074 0682 48050000 		.4byte	.LASF134
+ 1075 0686 11       		.byte	0x11
+ 1076 0687 2A03     		.2byte	0x32a
+ 1077 0689 18       		.uleb128 0x18
+ 1078 068a F4030000 		.4byte	.LASF135
+ 1079 068e F4030000 		.4byte	.LASF135
+ 1080 0692 0E       		.byte	0xe
+ 1081 0693 4A01     		.2byte	0x14a
+ 1082 0695 19       		.uleb128 0x19
+ 1083 0696 500C0000 		.4byte	.LASF136
+ 1084 069a 500C0000 		.4byte	.LASF136
+ 1085 069e 12       		.byte	0x12
+ 1086 069f D9       		.byte	0xd9
+ 1087 06a0 18       		.uleb128 0x18
+ 1088 06a1 0A090000 		.4byte	.LASF137
+ 1089 06a5 0A090000 		.4byte	.LASF137
+ 1090 06a9 05       		.byte	0x5
+ 1091 06aa CF07     		.2byte	0x7cf
+ 1092 06ac 00       		.byte	0
+ 1093              		.section	.debug_abbrev,"",%progbits
+ 1094              	.Ldebug_abbrev0:
+ 1095 0000 01       		.uleb128 0x1
+ 1096 0001 11       		.uleb128 0x11
+ 1097 0002 01       		.byte	0x1
+ 1098 0003 25       		.uleb128 0x25
+ 1099 0004 0E       		.uleb128 0xe
+ 1100 0005 13       		.uleb128 0x13
+ 1101 0006 0B       		.uleb128 0xb
+ 1102 0007 03       		.uleb128 0x3
+ 1103 0008 0E       		.uleb128 0xe
+ 1104 0009 1B       		.uleb128 0x1b
+ 1105 000a 0E       		.uleb128 0xe
+ 1106 000b 55       		.uleb128 0x55
+ 1107 000c 17       		.uleb128 0x17
+ 1108 000d 11       		.uleb128 0x11
+ 1109 000e 01       		.uleb128 0x1
+ 1110 000f 10       		.uleb128 0x10
+ 1111 0010 17       		.uleb128 0x17
+ 1112 0011 00       		.byte	0
+ 1113 0012 00       		.byte	0
+ 1114 0013 02       		.uleb128 0x2
+ 1115 0014 24       		.uleb128 0x24
+ 1116 0015 00       		.byte	0
+ 1117 0016 0B       		.uleb128 0xb
+ 1118 0017 0B       		.uleb128 0xb
+ 1119 0018 3E       		.uleb128 0x3e
+ 1120 0019 0B       		.uleb128 0xb
+ 1121 001a 03       		.uleb128 0x3
+ 1122 001b 0E       		.uleb128 0xe
+ 1123 001c 00       		.byte	0
+ 1124 001d 00       		.byte	0
+ 1125 001e 03       		.uleb128 0x3
+ 1126 001f 24       		.uleb128 0x24
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 22
+
+
+ 1127 0020 00       		.byte	0
+ 1128 0021 0B       		.uleb128 0xb
+ 1129 0022 0B       		.uleb128 0xb
+ 1130 0023 3E       		.uleb128 0x3e
+ 1131 0024 0B       		.uleb128 0xb
+ 1132 0025 03       		.uleb128 0x3
+ 1133 0026 08       		.uleb128 0x8
+ 1134 0027 00       		.byte	0
+ 1135 0028 00       		.byte	0
+ 1136 0029 04       		.uleb128 0x4
+ 1137 002a 16       		.uleb128 0x16
+ 1138 002b 00       		.byte	0
+ 1139 002c 03       		.uleb128 0x3
+ 1140 002d 0E       		.uleb128 0xe
+ 1141 002e 3A       		.uleb128 0x3a
+ 1142 002f 0B       		.uleb128 0xb
+ 1143 0030 3B       		.uleb128 0x3b
+ 1144 0031 05       		.uleb128 0x5
+ 1145 0032 49       		.uleb128 0x49
+ 1146 0033 13       		.uleb128 0x13
+ 1147 0034 00       		.byte	0
+ 1148 0035 00       		.byte	0
+ 1149 0036 05       		.uleb128 0x5
+ 1150 0037 0F       		.uleb128 0xf
+ 1151 0038 00       		.byte	0
+ 1152 0039 0B       		.uleb128 0xb
+ 1153 003a 0B       		.uleb128 0xb
+ 1154 003b 00       		.byte	0
+ 1155 003c 00       		.byte	0
+ 1156 003d 06       		.uleb128 0x6
+ 1157 003e 0F       		.uleb128 0xf
+ 1158 003f 00       		.byte	0
+ 1159 0040 0B       		.uleb128 0xb
+ 1160 0041 0B       		.uleb128 0xb
+ 1161 0042 49       		.uleb128 0x49
+ 1162 0043 13       		.uleb128 0x13
+ 1163 0044 00       		.byte	0
+ 1164 0045 00       		.byte	0
+ 1165 0046 07       		.uleb128 0x7
+ 1166 0047 04       		.uleb128 0x4
+ 1167 0048 01       		.byte	0x1
+ 1168 0049 0B       		.uleb128 0xb
+ 1169 004a 0B       		.uleb128 0xb
+ 1170 004b 49       		.uleb128 0x49
+ 1171 004c 13       		.uleb128 0x13
+ 1172 004d 3A       		.uleb128 0x3a
+ 1173 004e 0B       		.uleb128 0xb
+ 1174 004f 3B       		.uleb128 0x3b
+ 1175 0050 05       		.uleb128 0x5
+ 1176 0051 01       		.uleb128 0x1
+ 1177 0052 13       		.uleb128 0x13
+ 1178 0053 00       		.byte	0
+ 1179 0054 00       		.byte	0
+ 1180 0055 08       		.uleb128 0x8
+ 1181 0056 28       		.uleb128 0x28
+ 1182 0057 00       		.byte	0
+ 1183 0058 03       		.uleb128 0x3
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 23
+
+
+ 1184 0059 0E       		.uleb128 0xe
+ 1185 005a 1C       		.uleb128 0x1c
+ 1186 005b 0B       		.uleb128 0xb
+ 1187 005c 00       		.byte	0
+ 1188 005d 00       		.byte	0
+ 1189 005e 09       		.uleb128 0x9
+ 1190 005f 13       		.uleb128 0x13
+ 1191 0060 01       		.byte	0x1
+ 1192 0061 0B       		.uleb128 0xb
+ 1193 0062 0B       		.uleb128 0xb
+ 1194 0063 3A       		.uleb128 0x3a
+ 1195 0064 0B       		.uleb128 0xb
+ 1196 0065 3B       		.uleb128 0x3b
+ 1197 0066 05       		.uleb128 0x5
+ 1198 0067 01       		.uleb128 0x1
+ 1199 0068 13       		.uleb128 0x13
+ 1200 0069 00       		.byte	0
+ 1201 006a 00       		.byte	0
+ 1202 006b 0A       		.uleb128 0xa
+ 1203 006c 0D       		.uleb128 0xd
+ 1204 006d 00       		.byte	0
+ 1205 006e 03       		.uleb128 0x3
+ 1206 006f 0E       		.uleb128 0xe
+ 1207 0070 3A       		.uleb128 0x3a
+ 1208 0071 0B       		.uleb128 0xb
+ 1209 0072 3B       		.uleb128 0x3b
+ 1210 0073 05       		.uleb128 0x5
+ 1211 0074 49       		.uleb128 0x49
+ 1212 0075 13       		.uleb128 0x13
+ 1213 0076 38       		.uleb128 0x38
+ 1214 0077 0B       		.uleb128 0xb
+ 1215 0078 00       		.byte	0
+ 1216 0079 00       		.byte	0
+ 1217 007a 0B       		.uleb128 0xb
+ 1218 007b 0D       		.uleb128 0xd
+ 1219 007c 00       		.byte	0
+ 1220 007d 03       		.uleb128 0x3
+ 1221 007e 08       		.uleb128 0x8
+ 1222 007f 3A       		.uleb128 0x3a
+ 1223 0080 0B       		.uleb128 0xb
+ 1224 0081 3B       		.uleb128 0x3b
+ 1225 0082 05       		.uleb128 0x5
+ 1226 0083 49       		.uleb128 0x49
+ 1227 0084 13       		.uleb128 0x13
+ 1228 0085 38       		.uleb128 0x38
+ 1229 0086 0B       		.uleb128 0xb
+ 1230 0087 00       		.byte	0
+ 1231 0088 00       		.byte	0
+ 1232 0089 0C       		.uleb128 0xc
+ 1233 008a 16       		.uleb128 0x16
+ 1234 008b 00       		.byte	0
+ 1235 008c 03       		.uleb128 0x3
+ 1236 008d 0E       		.uleb128 0xe
+ 1237 008e 3A       		.uleb128 0x3a
+ 1238 008f 0B       		.uleb128 0xb
+ 1239 0090 3B       		.uleb128 0x3b
+ 1240 0091 0B       		.uleb128 0xb
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 24
+
+
+ 1241 0092 49       		.uleb128 0x49
+ 1242 0093 13       		.uleb128 0x13
+ 1243 0094 00       		.byte	0
+ 1244 0095 00       		.byte	0
+ 1245 0096 0D       		.uleb128 0xd
+ 1246 0097 2E       		.uleb128 0x2e
+ 1247 0098 01       		.byte	0x1
+ 1248 0099 3F       		.uleb128 0x3f
+ 1249 009a 19       		.uleb128 0x19
+ 1250 009b 03       		.uleb128 0x3
+ 1251 009c 0E       		.uleb128 0xe
+ 1252 009d 3A       		.uleb128 0x3a
+ 1253 009e 0B       		.uleb128 0xb
+ 1254 009f 3B       		.uleb128 0x3b
+ 1255 00a0 0B       		.uleb128 0xb
+ 1256 00a1 27       		.uleb128 0x27
+ 1257 00a2 19       		.uleb128 0x19
+ 1258 00a3 11       		.uleb128 0x11
+ 1259 00a4 01       		.uleb128 0x1
+ 1260 00a5 12       		.uleb128 0x12
+ 1261 00a6 06       		.uleb128 0x6
+ 1262 00a7 40       		.uleb128 0x40
+ 1263 00a8 18       		.uleb128 0x18
+ 1264 00a9 9742     		.uleb128 0x2117
+ 1265 00ab 19       		.uleb128 0x19
+ 1266 00ac 01       		.uleb128 0x1
+ 1267 00ad 13       		.uleb128 0x13
+ 1268 00ae 00       		.byte	0
+ 1269 00af 00       		.byte	0
+ 1270 00b0 0E       		.uleb128 0xe
+ 1271 00b1 05       		.uleb128 0x5
+ 1272 00b2 00       		.byte	0
+ 1273 00b3 03       		.uleb128 0x3
+ 1274 00b4 0E       		.uleb128 0xe
+ 1275 00b5 3A       		.uleb128 0x3a
+ 1276 00b6 0B       		.uleb128 0xb
+ 1277 00b7 3B       		.uleb128 0x3b
+ 1278 00b8 0B       		.uleb128 0xb
+ 1279 00b9 49       		.uleb128 0x49
+ 1280 00ba 13       		.uleb128 0x13
+ 1281 00bb 02       		.uleb128 0x2
+ 1282 00bc 17       		.uleb128 0x17
+ 1283 00bd 00       		.byte	0
+ 1284 00be 00       		.byte	0
+ 1285 00bf 0F       		.uleb128 0xf
+ 1286 00c0 34       		.uleb128 0x34
+ 1287 00c1 00       		.byte	0
+ 1288 00c2 03       		.uleb128 0x3
+ 1289 00c3 0E       		.uleb128 0xe
+ 1290 00c4 3A       		.uleb128 0x3a
+ 1291 00c5 0B       		.uleb128 0xb
+ 1292 00c6 3B       		.uleb128 0x3b
+ 1293 00c7 0B       		.uleb128 0xb
+ 1294 00c8 49       		.uleb128 0x49
+ 1295 00c9 13       		.uleb128 0x13
+ 1296 00ca 02       		.uleb128 0x2
+ 1297 00cb 18       		.uleb128 0x18
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 25
+
+
+ 1298 00cc 00       		.byte	0
+ 1299 00cd 00       		.byte	0
+ 1300 00ce 10       		.uleb128 0x10
+ 1301 00cf 898201   		.uleb128 0x4109
+ 1302 00d2 01       		.byte	0x1
+ 1303 00d3 11       		.uleb128 0x11
+ 1304 00d4 01       		.uleb128 0x1
+ 1305 00d5 31       		.uleb128 0x31
+ 1306 00d6 13       		.uleb128 0x13
+ 1307 00d7 01       		.uleb128 0x1
+ 1308 00d8 13       		.uleb128 0x13
+ 1309 00d9 00       		.byte	0
+ 1310 00da 00       		.byte	0
+ 1311 00db 11       		.uleb128 0x11
+ 1312 00dc 8A8201   		.uleb128 0x410a
+ 1313 00df 00       		.byte	0
+ 1314 00e0 02       		.uleb128 0x2
+ 1315 00e1 18       		.uleb128 0x18
+ 1316 00e2 9142     		.uleb128 0x2111
+ 1317 00e4 18       		.uleb128 0x18
+ 1318 00e5 00       		.byte	0
+ 1319 00e6 00       		.byte	0
+ 1320 00e7 12       		.uleb128 0x12
+ 1321 00e8 898201   		.uleb128 0x4109
+ 1322 00eb 00       		.byte	0
+ 1323 00ec 11       		.uleb128 0x11
+ 1324 00ed 01       		.uleb128 0x1
+ 1325 00ee 31       		.uleb128 0x31
+ 1326 00ef 13       		.uleb128 0x13
+ 1327 00f0 00       		.byte	0
+ 1328 00f1 00       		.byte	0
+ 1329 00f2 13       		.uleb128 0x13
+ 1330 00f3 2E       		.uleb128 0x2e
+ 1331 00f4 01       		.byte	0x1
+ 1332 00f5 3F       		.uleb128 0x3f
+ 1333 00f6 19       		.uleb128 0x19
+ 1334 00f7 03       		.uleb128 0x3
+ 1335 00f8 0E       		.uleb128 0xe
+ 1336 00f9 3A       		.uleb128 0x3a
+ 1337 00fa 0B       		.uleb128 0xb
+ 1338 00fb 3B       		.uleb128 0x3b
+ 1339 00fc 0B       		.uleb128 0xb
+ 1340 00fd 27       		.uleb128 0x27
+ 1341 00fe 19       		.uleb128 0x19
+ 1342 00ff 49       		.uleb128 0x49
+ 1343 0100 13       		.uleb128 0x13
+ 1344 0101 8701     		.uleb128 0x87
+ 1345 0103 19       		.uleb128 0x19
+ 1346 0104 11       		.uleb128 0x11
+ 1347 0105 01       		.uleb128 0x1
+ 1348 0106 12       		.uleb128 0x12
+ 1349 0107 06       		.uleb128 0x6
+ 1350 0108 40       		.uleb128 0x40
+ 1351 0109 18       		.uleb128 0x18
+ 1352 010a 9742     		.uleb128 0x2117
+ 1353 010c 19       		.uleb128 0x19
+ 1354 010d 01       		.uleb128 0x1
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 26
+
+
+ 1355 010e 13       		.uleb128 0x13
+ 1356 010f 00       		.byte	0
+ 1357 0110 00       		.byte	0
+ 1358 0111 14       		.uleb128 0x14
+ 1359 0112 01       		.uleb128 0x1
+ 1360 0113 01       		.byte	0x1
+ 1361 0114 49       		.uleb128 0x49
+ 1362 0115 13       		.uleb128 0x13
+ 1363 0116 01       		.uleb128 0x1
+ 1364 0117 13       		.uleb128 0x13
+ 1365 0118 00       		.byte	0
+ 1366 0119 00       		.byte	0
+ 1367 011a 15       		.uleb128 0x15
+ 1368 011b 21       		.uleb128 0x21
+ 1369 011c 00       		.byte	0
+ 1370 011d 49       		.uleb128 0x49
+ 1371 011e 13       		.uleb128 0x13
+ 1372 011f 2F       		.uleb128 0x2f
+ 1373 0120 0B       		.uleb128 0xb
+ 1374 0121 00       		.byte	0
+ 1375 0122 00       		.byte	0
+ 1376 0123 16       		.uleb128 0x16
+ 1377 0124 34       		.uleb128 0x34
+ 1378 0125 00       		.byte	0
+ 1379 0126 03       		.uleb128 0x3
+ 1380 0127 0E       		.uleb128 0xe
+ 1381 0128 3A       		.uleb128 0x3a
+ 1382 0129 0B       		.uleb128 0xb
+ 1383 012a 3B       		.uleb128 0x3b
+ 1384 012b 05       		.uleb128 0x5
+ 1385 012c 49       		.uleb128 0x49
+ 1386 012d 13       		.uleb128 0x13
+ 1387 012e 3F       		.uleb128 0x3f
+ 1388 012f 19       		.uleb128 0x19
+ 1389 0130 3C       		.uleb128 0x3c
+ 1390 0131 19       		.uleb128 0x19
+ 1391 0132 00       		.byte	0
+ 1392 0133 00       		.byte	0
+ 1393 0134 17       		.uleb128 0x17
+ 1394 0135 34       		.uleb128 0x34
+ 1395 0136 00       		.byte	0
+ 1396 0137 03       		.uleb128 0x3
+ 1397 0138 0E       		.uleb128 0xe
+ 1398 0139 3A       		.uleb128 0x3a
+ 1399 013a 0B       		.uleb128 0xb
+ 1400 013b 3B       		.uleb128 0x3b
+ 1401 013c 0B       		.uleb128 0xb
+ 1402 013d 49       		.uleb128 0x49
+ 1403 013e 13       		.uleb128 0x13
+ 1404 013f 3F       		.uleb128 0x3f
+ 1405 0140 19       		.uleb128 0x19
+ 1406 0141 02       		.uleb128 0x2
+ 1407 0142 18       		.uleb128 0x18
+ 1408 0143 00       		.byte	0
+ 1409 0144 00       		.byte	0
+ 1410 0145 18       		.uleb128 0x18
+ 1411 0146 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 27
+
+
+ 1412 0147 00       		.byte	0
+ 1413 0148 3F       		.uleb128 0x3f
+ 1414 0149 19       		.uleb128 0x19
+ 1415 014a 3C       		.uleb128 0x3c
+ 1416 014b 19       		.uleb128 0x19
+ 1417 014c 6E       		.uleb128 0x6e
+ 1418 014d 0E       		.uleb128 0xe
+ 1419 014e 03       		.uleb128 0x3
+ 1420 014f 0E       		.uleb128 0xe
+ 1421 0150 3A       		.uleb128 0x3a
+ 1422 0151 0B       		.uleb128 0xb
+ 1423 0152 3B       		.uleb128 0x3b
+ 1424 0153 05       		.uleb128 0x5
+ 1425 0154 00       		.byte	0
+ 1426 0155 00       		.byte	0
+ 1427 0156 19       		.uleb128 0x19
+ 1428 0157 2E       		.uleb128 0x2e
+ 1429 0158 00       		.byte	0
+ 1430 0159 3F       		.uleb128 0x3f
+ 1431 015a 19       		.uleb128 0x19
+ 1432 015b 3C       		.uleb128 0x3c
+ 1433 015c 19       		.uleb128 0x19
+ 1434 015d 6E       		.uleb128 0x6e
+ 1435 015e 0E       		.uleb128 0xe
+ 1436 015f 03       		.uleb128 0x3
+ 1437 0160 0E       		.uleb128 0xe
+ 1438 0161 3A       		.uleb128 0x3a
+ 1439 0162 0B       		.uleb128 0xb
+ 1440 0163 3B       		.uleb128 0x3b
+ 1441 0164 0B       		.uleb128 0xb
+ 1442 0165 00       		.byte	0
+ 1443 0166 00       		.byte	0
+ 1444 0167 00       		.byte	0
+ 1445              		.section	.debug_loc,"",%progbits
+ 1446              	.Ldebug_loc0:
+ 1447              	.LLST0:
+ 1448 0000 00000000 		.4byte	.LVL0
+ 1449 0004 08000000 		.4byte	.LVL1
+ 1450 0008 0100     		.2byte	0x1
+ 1451 000a 50       		.byte	0x50
+ 1452 000b 08000000 		.4byte	.LVL1
+ 1453 000f 6C000000 		.4byte	.LVL11
+ 1454 0013 0100     		.2byte	0x1
+ 1455 0015 54       		.byte	0x54
+ 1456 0016 6C000000 		.4byte	.LVL11
+ 1457 001a 7C000000 		.4byte	.LFE36
+ 1458 001e 0400     		.2byte	0x4
+ 1459 0020 F3       		.byte	0xf3
+ 1460 0021 01       		.uleb128 0x1
+ 1461 0022 50       		.byte	0x50
+ 1462 0023 9F       		.byte	0x9f
+ 1463 0024 00000000 		.4byte	0
+ 1464 0028 00000000 		.4byte	0
+ 1465              	.LLST1:
+ 1466 002c 00000000 		.4byte	.LVL0
+ 1467 0030 1A000000 		.4byte	.LVL2
+ 1468 0034 0100     		.2byte	0x1
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 28
+
+
+ 1469 0036 51       		.byte	0x51
+ 1470 0037 1A000000 		.4byte	.LVL2
+ 1471 003b 7C000000 		.4byte	.LFE36
+ 1472 003f 0400     		.2byte	0x4
+ 1473 0041 F3       		.byte	0xf3
+ 1474 0042 01       		.uleb128 0x1
+ 1475 0043 51       		.byte	0x51
+ 1476 0044 9F       		.byte	0x9f
+ 1477 0045 00000000 		.4byte	0
+ 1478 0049 00000000 		.4byte	0
+ 1479              		.section	.debug_aranges,"",%progbits
+ 1480 0000 24000000 		.4byte	0x24
+ 1481 0004 0200     		.2byte	0x2
+ 1482 0006 00000000 		.4byte	.Ldebug_info0
+ 1483 000a 04       		.byte	0x4
+ 1484 000b 00       		.byte	0
+ 1485 000c 0000     		.2byte	0
+ 1486 000e 0000     		.2byte	0
+ 1487 0010 00000000 		.4byte	.LFB36
+ 1488 0014 7C000000 		.4byte	.LFE36-.LFB36
+ 1489 0018 00000000 		.4byte	.LFB37
+ 1490 001c 78000000 		.4byte	.LFE37-.LFB37
+ 1491 0020 00000000 		.4byte	0
+ 1492 0024 00000000 		.4byte	0
+ 1493              		.section	.debug_ranges,"",%progbits
+ 1494              	.Ldebug_ranges0:
+ 1495 0000 00000000 		.4byte	.LFB36
+ 1496 0004 7C000000 		.4byte	.LFE36
+ 1497 0008 00000000 		.4byte	.LFB37
+ 1498 000c 78000000 		.4byte	.LFE37
+ 1499 0010 00000000 		.4byte	0
+ 1500 0014 00000000 		.4byte	0
+ 1501              		.section	.debug_line,"",%progbits
+ 1502              	.Ldebug_line0:
+ 1503 0000 CD010000 		.section	.debug_str,"MS",%progbits,1
+ 1503      02008901 
+ 1503      00000201 
+ 1503      FB0E0D00 
+ 1503      01010101 
+ 1504              	.LASF58:
+ 1505 0000 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 1505      455F4556 
+ 1505      545F4741 
+ 1505      5454435F 
+ 1505      52454144 
+ 1506              	.LASF22:
+ 1507 001e 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS\000"
+ 1507      455F4556 
+ 1507      545F5354 
+ 1507      41434B5F 
+ 1507      42555359 
+ 1508              	.LASF99:
+ 1509 003a 4359424C 		.ascii	"CYBLE_STATE_STOPPED\000"
+ 1509      455F5354 
+ 1509      4154455F 
+ 1509      53544F50 
+ 1509      50454400 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 29
+
+
+ 1510              	.LASF131:
+ 1511 004e 4563686F 		.ascii	"Echo_Read\000"
+ 1511      5F526561 
+ 1511      6400
+ 1512              	.LASF92:
+ 1513 0058 4359424C 		.ascii	"CYBLE_CONN_HANDLE_T\000"
+ 1513      455F434F 
+ 1513      4E4E5F48 
+ 1513      414E444C 
+ 1513      455F5400 
+ 1514              	.LASF77:
+ 1515 006c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 1515      455F4556 
+ 1515      545F4C32 
+ 1515      4341505F 
+ 1515      43424643 
+ 1516              	.LASF34:
+ 1517 008a 4359424C 		.ascii	"CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 1517      455F4556 
+ 1517      545F4741 
+ 1517      505F434F 
+ 1517      4E4E4543 
+ 1518              	.LASF140:
+ 1519 00b3 433A5C55 		.ascii	"C:\\Users\\first processor\\Desktop\\Showcase\\Show"
+ 1519      73657273 
+ 1519      5C666972 
+ 1519      73742070 
+ 1519      726F6365 
+ 1520 00e1 63617365 		.ascii	"case\\UltraRangeSensor.cydsn\000"
+ 1520      5C556C74 
+ 1520      72615261 
+ 1520      6E676553 
+ 1520      656E736F 
+ 1521              	.LASF115:
+ 1522 00fd 73747269 		.ascii	"string\000"
+ 1522      6E6700
+ 1523              	.LASF64:
+ 1524 0104 4359424C 		.ascii	"CYBLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 1524      455F4556 
+ 1524      545F4741 
+ 1524      5454535F 
+ 1524      45584543 
+ 1525              	.LASF19:
+ 1526 0123 4359424C 		.ascii	"CYBLE_EVT_TIMEOUT\000"
+ 1526      455F4556 
+ 1526      545F5449 
+ 1526      4D454F55 
+ 1526      5400
+ 1527              	.LASF4:
+ 1528 0135 6C6F6E67 		.ascii	"long int\000"
+ 1528      20696E74 
+ 1528      00
+ 1529              	.LASF138:
+ 1530 013e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1530      43313120 
+ 1530      352E342E 
+ 1530      31203230 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 30
+
+
+ 1530      31363036 
+ 1531 0171 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1531      20726576 
+ 1531      6973696F 
+ 1531      6E203233 
+ 1531      37373135 
+ 1532 01a4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1532      66756E63 
+ 1532      74696F6E 
+ 1532      2D736563 
+ 1532      74696F6E 
+ 1533              	.LASF7:
+ 1534 01cc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1534      206C6F6E 
+ 1534      6720756E 
+ 1534      7369676E 
+ 1534      65642069 
+ 1535              	.LASF94:
+ 1536 01e3 4359424C 		.ascii	"CYBLE_GATT_VALUE_T\000"
+ 1536      455F4741 
+ 1536      54545F56 
+ 1536      414C5545 
+ 1536      5F5400
+ 1537              	.LASF21:
+ 1538 01f6 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
+ 1538      455F4556 
+ 1538      545F4843 
+ 1538      495F5354 
+ 1538      41545553 
+ 1539              	.LASF125:
+ 1540 020b 55415254 		.ascii	"UART_Start\000"
+ 1540      5F537461 
+ 1540      727400
+ 1541              	.LASF84:
+ 1542 0216 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\000"
+ 1542      455F4556 
+ 1542      545F5045 
+ 1542      4E44494E 
+ 1542      475F464C 
+ 1543              	.LASF112:
+ 1544 0234 6576656E 		.ascii	"eventCode\000"
+ 1544      74436F64 
+ 1544      6500
+ 1545              	.LASF73:
+ 1546 023e 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 1546      455F4556 
+ 1546      545F4C32 
+ 1546      4341505F 
+ 1546      434F4E4E 
+ 1547              	.LASF33:
+ 1548 0264 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 1548      455F4556 
+ 1548      545F4741 
+ 1548      505F454E 
+ 1548      43525950 
+ 1549              	.LASF133:
+ 1550 0281 69746F61 		.ascii	"itoa\000"
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 31
+
+
+ 1550      00
+ 1551              	.LASF37:
+ 1552 0286 4359424C 		.ascii	"CYBLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 1552      455F4556 
+ 1552      545F4741 
+ 1552      505F4E55 
+ 1552      4D455249 
+ 1553              	.LASF81:
+ 1554 02af 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 1554      455F4556 
+ 1554      545F4C32 
+ 1554      4341505F 
+ 1554      43424643 
+ 1555              	.LASF102:
+ 1556 02d2 4359424C 		.ascii	"CYBLE_STATE_ADVERTISING\000"
+ 1556      455F5354 
+ 1556      4154455F 
+ 1556      41445645 
+ 1556      52544953 
+ 1557              	.LASF6:
+ 1558 02ea 6C6F6E67 		.ascii	"long long int\000"
+ 1558      206C6F6E 
+ 1558      6720696E 
+ 1558      7400
+ 1559              	.LASF0:
+ 1560 02f8 7369676E 		.ascii	"signed char\000"
+ 1560      65642063 
+ 1560      68617200 
+ 1561              	.LASF18:
+ 1562 0304 4359424C 		.ascii	"CYBLE_EVT_STACK_ON\000"
+ 1562      455F4556 
+ 1562      545F5354 
+ 1562      41434B5F 
+ 1562      4F4E00
+ 1563              	.LASF35:
+ 1564 0317 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_START_STOP\000"
+ 1564      455F4556 
+ 1564      545F4741 
+ 1564      50435F53 
+ 1564      43414E5F 
+ 1565              	.LASF93:
+ 1566 0336 61637475 		.ascii	"actualLen\000"
+ 1566      616C4C65 
+ 1566      6E00
+ 1567              	.LASF25:
+ 1568 0340 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
+ 1568      455F4556 
+ 1568      545F4741 
+ 1568      505F4155 
+ 1568      54485F52 
+ 1569              	.LASF57:
+ 1570 0357 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_RSP\000"
+ 1570      455F4556 
+ 1570      545F4741 
+ 1570      5454435F 
+ 1570      52454144 
+ 1571              	.LASF62:
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 32
+
+
+ 1572 0370 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 1572      455F4556 
+ 1572      545F4741 
+ 1572      5454535F 
+ 1572      57524954 
+ 1573              	.LASF105:
+ 1574 038e 4359424C 		.ascii	"CYBLE_STATE_DISCONNECTED\000"
+ 1574      455F5354 
+ 1574      4154455F 
+ 1574      44495343 
+ 1574      4F4E4E45 
+ 1575              	.LASF30:
+ 1576 03a7 4359424C 		.ascii	"CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 1576      455F4556 
+ 1576      545F4741 
+ 1576      50505F41 
+ 1576      44564552 
+ 1577              	.LASF9:
+ 1578 03cf 75696E74 		.ascii	"uint8\000"
+ 1578      3800
+ 1579              	.LASF65:
+ 1580 03d5 4359424C 		.ascii	"CYBLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 1580      455F4556 
+ 1580      545F4741 
+ 1580      5454435F 
+ 1580      45584543 
+ 1581              	.LASF135:
+ 1582 03f4 54696D65 		.ascii	"Timer_WriteCounter\000"
+ 1582      725F5772 
+ 1582      69746543 
+ 1582      6F756E74 
+ 1582      657200
+ 1583              	.LASF13:
+ 1584 0407 646F7562 		.ascii	"double\000"
+ 1584      6C6500
+ 1585              	.LASF110:
+ 1586 040e 4359424C 		.ascii	"CYBLE_SRVI_CUSTOMS_END\000"
+ 1586      455F5352 
+ 1586      56495F43 
+ 1586      5553544F 
+ 1586      4D535F45 
+ 1587              	.LASF103:
+ 1588 0425 4359424C 		.ascii	"CYBLE_STATE_SCANNING\000"
+ 1588      455F5354 
+ 1588      4154455F 
+ 1588      5343414E 
+ 1588      4E494E47 
+ 1589              	.LASF11:
+ 1590 043a 75696E74 		.ascii	"uint32\000"
+ 1590      333200
+ 1591              	.LASF88:
+ 1592 0441 4359424C 		.ascii	"CYBLE_EVT_MAX\000"
+ 1592      455F4556 
+ 1592      545F4D41 
+ 1592      5800
+ 1593              	.LASF90:
+ 1594 044f 62644861 		.ascii	"bdHandle\000"
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 33
+
+
+ 1594      6E646C65 
+ 1594      00
+ 1595              	.LASF96:
+ 1596 0458 61747472 		.ascii	"attrHandle\000"
+ 1596      48616E64 
+ 1596      6C6500
+ 1597              	.LASF83:
+ 1598 0463 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 1598      455F4556 
+ 1598      545F4C32 
+ 1598      4341505F 
+ 1598      43424643 
+ 1599              	.LASF45:
+ 1600 0487 4359424C 		.ascii	"CYBLE_EVT_GAP_SCAN_REQ_RECVD\000"
+ 1600      455F4556 
+ 1600      545F4741 
+ 1600      505F5343 
+ 1600      414E5F52 
+ 1601              	.LASF118:
+ 1602 04a4 61667374 		.ascii	"afstand\000"
+ 1602      616E6400 
+ 1603              	.LASF119:
+ 1604 04ac 4379426C 		.ascii	"CyBle_GattsWriteAttributeValue\000"
+ 1604      655F4761 
+ 1604      74747357 
+ 1604      72697465 
+ 1604      41747472 
+ 1605              	.LASF72:
+ 1606 04cb 4359424C 		.ascii	"CYBLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ 1606      455F4556 
+ 1606      545F4741 
+ 1606      5454435F 
+ 1606      4C4F4E47 
+ 1607              	.LASF70:
+ 1608 04ee 4359424C 		.ascii	"CYBLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 1608      455F4556 
+ 1608      545F4741 
+ 1608      5454435F 
+ 1608      53544F50 
+ 1609              	.LASF8:
+ 1610 0510 756E7369 		.ascii	"unsigned int\000"
+ 1610      676E6564 
+ 1610      20696E74 
+ 1610      00
+ 1611              	.LASF85:
+ 1612 051d 4359424C 		.ascii	"CYBLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 1612      455F4556 
+ 1612      545F4C45 
+ 1612      5F50494E 
+ 1612      475F4155 
+ 1613              	.LASF127:
+ 1614 053c 54696D65 		.ascii	"Timer_Start\000"
+ 1614      725F5374 
+ 1614      61727400 
+ 1615              	.LASF134:
+ 1616 0548 55415254 		.ascii	"UART_UartPutString\000"
+ 1616      5F556172 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 34
+
+
+ 1616      74507574 
+ 1616      53747269 
+ 1616      6E6700
+ 1617              	.LASF5:
+ 1618 055b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1618      20756E73 
+ 1618      69676E65 
+ 1618      6420696E 
+ 1618      7400
+ 1619              	.LASF44:
+ 1620 056d 4359424C 		.ascii	"CYBLE_EVT_GAP_CONN_ESTB\000"
+ 1620      455F4556 
+ 1620      545F4741 
+ 1620      505F434F 
+ 1620      4E4E5F45 
+ 1621              	.LASF60:
+ 1622 0585 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_REQ\000"
+ 1622      455F4556 
+ 1622      545F4741 
+ 1622      5454535F 
+ 1622      57524954 
+ 1623              	.LASF52:
+ 1624 059f 4359424C 		.ascii	"CYBLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 1624      455F4556 
+ 1624      545F4741 
+ 1624      5454435F 
+ 1624      5843484E 
+ 1625              	.LASF69:
+ 1626 05bd 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 1626      455F4556 
+ 1626      545F4741 
+ 1626      5454535F 
+ 1626      44415441 
+ 1627              	.LASF79:
+ 1628 05e1 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 1628      455F4556 
+ 1628      545F4C32 
+ 1628      4341505F 
+ 1628      43424643 
+ 1629              	.LASF3:
+ 1630 0602 73686F72 		.ascii	"short unsigned int\000"
+ 1630      7420756E 
+ 1630      7369676E 
+ 1630      65642069 
+ 1630      6E7400
+ 1631              	.LASF17:
+ 1632 0615 4359424C 		.ascii	"CYBLE_EVT_HOST_INVALID\000"
+ 1632      455F4556 
+ 1632      545F484F 
+ 1632      53545F49 
+ 1632      4E56414C 
+ 1633              	.LASF55:
+ 1634 062c 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 1634      455F4556 
+ 1634      545F4741 
+ 1634      5454435F 
+ 1634      46494E44 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 35
+
+
+ 1635              	.LASF23:
+ 1636 064a 4359424C 		.ascii	"CYBLE_EVT_MEMORY_REQUEST\000"
+ 1636      455F4556 
+ 1636      545F4D45 
+ 1636      4D4F5259 
+ 1636      5F524551 
+ 1637              	.LASF80:
+ 1638 0663 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 1638      455F4556 
+ 1638      545F4C32 
+ 1638      4341505F 
+ 1638      43424643 
+ 1639              	.LASF132:
+ 1640 0682 54696D65 		.ascii	"Timer_ReadCounter\000"
+ 1640      725F5265 
+ 1640      6164436F 
+ 1640      756E7465 
+ 1640      7200
+ 1641              	.LASF26:
+ 1642 0694 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 1642      455F4556 
+ 1642      545F4741 
+ 1642      505F5041 
+ 1642      53534B45 
+ 1643              	.LASF31:
+ 1644 06b8 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 1644      455F4556 
+ 1644      545F4741 
+ 1644      505F4445 
+ 1644      56494345 
+ 1645              	.LASF126:
+ 1646 06d7 50574D5F 		.ascii	"PWM_Start\000"
+ 1646      53746172 
+ 1646      7400
+ 1647              	.LASF46:
+ 1648 06e1 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ_REPLY_ERR\000"
+ 1648      455F4556 
+ 1648      545F4741 
+ 1648      505F4155 
+ 1648      54485F52 
+ 1649              	.LASF130:
+ 1650 0702 4379426C 		.ascii	"CyBle_Start\000"
+ 1650      655F5374 
+ 1650      61727400 
+ 1651              	.LASF116:
+ 1652 070e 6379426C 		.ascii	"cyBle_state\000"
+ 1652      655F7374 
+ 1652      61746500 
+ 1653              	.LASF27:
+ 1654 071a 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 1654      455F4556 
+ 1654      545F4741 
+ 1654      505F5041 
+ 1654      53534B45 
+ 1655              	.LASF49:
+ 1656 0740 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND\000"
+ 1656      455F4556 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 36
+
+
+ 1656      545F4741 
+ 1656      54545F43 
+ 1656      4F4E4E45 
+ 1657              	.LASF129:
+ 1658 075b 50574D5F 		.ascii	"PWM_WriteCompare\000"
+ 1658      57726974 
+ 1658      65436F6D 
+ 1658      70617265 
+ 1658      00
+ 1659              	.LASF128:
+ 1660 076c 50574D5F 		.ascii	"PWM_WritePeriod\000"
+ 1660      57726974 
+ 1660      65506572 
+ 1660      696F6400 
+ 1661              	.LASF75:
+ 1662 077c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_COMMAND_REJ\000"
+ 1662      455F4556 
+ 1662      545F4C32 
+ 1662      4341505F 
+ 1662      434F4D4D 
+ 1663              	.LASF24:
+ 1664 0798 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 1664      455F4556 
+ 1664      545F4741 
+ 1664      50435F53 
+ 1664      43414E5F 
+ 1665              	.LASF91:
+ 1666 07bc 61747449 		.ascii	"attId\000"
+ 1666      6400
+ 1667              	.LASF47:
+ 1668 07c2 4359424C 		.ascii	"CYBLE_EVT_GAP_SMP_LOC_P256_KEYS_GEN_AND_SET_COMPLET"
+ 1668      455F4556 
+ 1668      545F4741 
+ 1668      505F534D 
+ 1668      505F4C4F 
+ 1669 07f5 4500     		.ascii	"E\000"
+ 1670              	.LASF76:
+ 1671 07f7 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 1671      455F4556 
+ 1671      545F4C32 
+ 1671      4341505F 
+ 1671      43424643 
+ 1672              	.LASF54:
+ 1673 0815 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 1673      455F4556 
+ 1673      545F4741 
+ 1673      5454435F 
+ 1673      52454144 
+ 1674              	.LASF16:
+ 1675 0836 73697A65 		.ascii	"sizetype\000"
+ 1675      74797065 
+ 1675      00
+ 1676              	.LASF98:
+ 1677 083f 4359424C 		.ascii	"CYBLE_GATTS_HANDLE_VALUE_NTF_T\000"
+ 1677      455F4741 
+ 1677      5454535F 
+ 1677      48414E44 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 37
+
+
+ 1677      4C455F56 
+ 1678              	.LASF100:
+ 1679 085e 4359424C 		.ascii	"CYBLE_STATE_INITIALIZING\000"
+ 1679      455F5354 
+ 1679      4154455F 
+ 1679      494E4954 
+ 1679      49414C49 
+ 1680              	.LASF29:
+ 1681 0877 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_FAILED\000"
+ 1681      455F4556 
+ 1681      545F4741 
+ 1681      505F4155 
+ 1681      54485F46 
+ 1682              	.LASF117:
+ 1683 0891 6379426C 		.ascii	"cyBle_connHandle\000"
+ 1683      655F636F 
+ 1683      6E6E4861 
+ 1683      6E646C65 
+ 1683      00
+ 1684              	.LASF61:
+ 1685 08a2 4359424C 		.ascii	"CYBLE_EVT_GATTC_WRITE_RSP\000"
+ 1685      455F4556 
+ 1685      545F4741 
+ 1685      5454435F 
+ 1685      57524954 
+ 1686              	.LASF42:
+ 1687 08bc 4359424C 		.ascii	"CYBLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
+ 1687      455F4556 
+ 1687      545F4741 
+ 1687      50435F44 
+ 1687      49524543 
+ 1688              	.LASF40:
+ 1689 08dd 4359424C 		.ascii	"CYBLE_EVT_GAP_DATA_LENGTH_CHANGE\000"
+ 1689      455F4556 
+ 1689      545F4741 
+ 1689      505F4441 
+ 1689      54415F4C 
+ 1690              	.LASF122:
+ 1691 08fe 426C6175 		.ascii	"Blauw_Write\000"
+ 1691      775F5772 
+ 1691      69746500 
+ 1692              	.LASF137:
+ 1693 090a 4379426C 		.ascii	"CyBle_ProcessEvents\000"
+ 1693      655F5072 
+ 1693      6F636573 
+ 1693      73457665 
+ 1693      6E747300 
+ 1694              	.LASF28:
+ 1695 091e 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_COMPLETE\000"
+ 1695      455F4556 
+ 1695      545F4741 
+ 1695      505F4155 
+ 1695      54485F43 
+ 1696              	.LASF66:
+ 1697 093a 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 1697      455F4556 
+ 1697      545F4741 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 38
+
+
+ 1697      5454435F 
+ 1697      48414E44 
+ 1698              	.LASF109:
+ 1699 095b 4359424C 		.ascii	"CYBLE_SRVI_CUSTOMS\000"
+ 1699      455F5352 
+ 1699      56495F43 
+ 1699      5553544F 
+ 1699      4D5300
+ 1700              	.LASF97:
+ 1701 096e 4359424C 		.ascii	"CYBLE_GATT_HANDLE_VALUE_PAIR_T\000"
+ 1701      455F4741 
+ 1701      54545F48 
+ 1701      414E444C 
+ 1701      455F5641 
+ 1702              	.LASF139:
+ 1703 098d 6D61696E 		.ascii	"main.c\000"
+ 1703      2E6300
+ 1704              	.LASF141:
+ 1705 0994 73746163 		.ascii	"stack_handler\000"
+ 1705      6B5F6861 
+ 1705      6E646C65 
+ 1705      7200
+ 1706              	.LASF53:
+ 1707 09a2 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 1707      455F4556 
+ 1707      545F4741 
+ 1707      5454435F 
+ 1707      52454144 
+ 1708              	.LASF12:
+ 1709 09c9 666C6F61 		.ascii	"float\000"
+ 1709      7400
+ 1710              	.LASF120:
+ 1711 09cf 4379426C 		.ascii	"CyBle_GappStartAdvertisement\000"
+ 1711      655F4761 
+ 1711      70705374 
+ 1711      61727441 
+ 1711      64766572 
+ 1712              	.LASF1:
+ 1713 09ec 756E7369 		.ascii	"unsigned char\000"
+ 1713      676E6564 
+ 1713      20636861 
+ 1713      7200
+ 1714              	.LASF10:
+ 1715 09fa 75696E74 		.ascii	"uint16\000"
+ 1715      313600
+ 1716              	.LASF38:
+ 1717 0a01 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 1717      455F4556 
+ 1717      545F4741 
+ 1717      505F4B45 
+ 1717      59505245 
+ 1718              	.LASF123:
+ 1719 0a25 43795379 		.ascii	"CySysPmSetWakeupPolarity\000"
+ 1719      73506D53 
+ 1719      65745761 
+ 1719      6B657570 
+ 1719      506F6C61 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 39
+
+
+ 1720              	.LASF104:
+ 1721 0a3e 4359424C 		.ascii	"CYBLE_STATE_CONNECTING\000"
+ 1721      455F5354 
+ 1721      4154455F 
+ 1721      434F4E4E 
+ 1721      45435449 
+ 1722              	.LASF2:
+ 1723 0a55 73686F72 		.ascii	"short int\000"
+ 1723      7420696E 
+ 1723      7400
+ 1724              	.LASF67:
+ 1725 0a5f 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 1725      455F4556 
+ 1725      545F4741 
+ 1725      5454435F 
+ 1725      48414E44 
+ 1726              	.LASF101:
+ 1727 0a80 4359424C 		.ascii	"CYBLE_STATE_CONNECTED\000"
+ 1727      455F5354 
+ 1727      4154455F 
+ 1727      434F4E4E 
+ 1727      45435445 
+ 1728              	.LASF86:
+ 1729 0a96 4359424C 		.ascii	"CYBLE_EVT_HCI_PKT\000"
+ 1729      455F4556 
+ 1729      545F4843 
+ 1729      495F504B 
+ 1729      5400
+ 1730              	.LASF63:
+ 1731 0aa8 4359424C 		.ascii	"CYBLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 1731      455F4556 
+ 1731      545F4741 
+ 1731      5454535F 
+ 1731      50524550 
+ 1732              	.LASF95:
+ 1733 0ac7 76616C75 		.ascii	"value\000"
+ 1733      6500
+ 1734              	.LASF68:
+ 1735 0acd 4359424C 		.ascii	"CYBLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 1735      455F4556 
+ 1735      545F4741 
+ 1735      5454535F 
+ 1735      48414E44 
+ 1736              	.LASF48:
+ 1737 0aee 4359424C 		.ascii	"CYBLE_EVT_GATTC_ERROR_RSP\000"
+ 1737      455F4556 
+ 1737      545F4741 
+ 1737      5454435F 
+ 1737      4552524F 
+ 1738              	.LASF43:
+ 1739 0b08 4359424C 		.ascii	"CYBLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 1739      455F4556 
+ 1739      545F4741 
+ 1739      505F534D 
+ 1739      505F4E45 
+ 1740              	.LASF111:
+ 1741 0b2f 4359424C 		.ascii	"CYBLE_SRVI_COUNT\000"
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 40
+
+
+ 1741      455F5352 
+ 1741      56495F43 
+ 1741      4F554E54 
+ 1741      00
+ 1742              	.LASF107:
+ 1743 0b40 4359424C 		.ascii	"CYBLE_SRVI_GAP\000"
+ 1743      455F5352 
+ 1743      56495F47 
+ 1743      415000
+ 1744              	.LASF15:
+ 1745 0b4f 6C6F6E67 		.ascii	"long double\000"
+ 1745      20646F75 
+ 1745      626C6500 
+ 1746              	.LASF14:
+ 1747 0b5b 63686172 		.ascii	"char\000"
+ 1747      00
+ 1748              	.LASF59:
+ 1749 0b60 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 1749      455F4556 
+ 1749      545F4741 
+ 1749      5454435F 
+ 1749      52454144 
+ 1750              	.LASF32:
+ 1751 0b7f 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 1751      455F4556 
+ 1751      545F4741 
+ 1751      505F4445 
+ 1751      56494345 
+ 1752              	.LASF108:
+ 1753 0ba1 4359424C 		.ascii	"CYBLE_SRVI_GATT\000"
+ 1753      455F5352 
+ 1753      56495F47 
+ 1753      41545400 
+ 1754              	.LASF71:
+ 1755 0bb1 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 1755      455F4556 
+ 1755      545F4741 
+ 1755      5454535F 
+ 1755      52454144 
+ 1756              	.LASF124:
+ 1757 0bda 43795379 		.ascii	"CySysPmStop\000"
+ 1757      73506D53 
+ 1757      746F7000 
+ 1758              	.LASF114:
+ 1759 0be6 74657374 		.ascii	"test\000"
+ 1759      00
+ 1760              	.LASF82:
+ 1761 0beb 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 1761      455F4556 
+ 1761      545F4C32 
+ 1761      4341505F 
+ 1761      43424643 
+ 1762              	.LASF20:
+ 1763 0c0e 4359424C 		.ascii	"CYBLE_EVT_HARDWARE_ERROR\000"
+ 1763      455F4556 
+ 1763      545F4841 
+ 1763      52445741 
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 41
+
+
+ 1763      52455F45 
+ 1764              	.LASF39:
+ 1765 0c27 4359424C 		.ascii	"CYBLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
+ 1765      455F4556 
+ 1765      545F4741 
+ 1765      505F4F4F 
+ 1765      425F4745 
+ 1766              	.LASF136:
+ 1767 0c50 43794465 		.ascii	"CyDelay\000"
+ 1767      6C617900 
+ 1768              	.LASF51:
+ 1769 0c58 4359424C 		.ascii	"CYBLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 1769      455F4556 
+ 1769      545F4741 
+ 1769      5454535F 
+ 1769      58434E48 
+ 1770              	.LASF113:
+ 1771 0c76 6576656E 		.ascii	"eventParam\000"
+ 1771      74506172 
+ 1771      616D00
+ 1772              	.LASF106:
+ 1773 0c81 4359424C 		.ascii	"CYBLE_STATE_T\000"
+ 1773      455F5354 
+ 1773      4154455F 
+ 1773      5400
+ 1774              	.LASF121:
+ 1775 0c8f 526F6F64 		.ascii	"Rood_Write\000"
+ 1775      5F577269 
+ 1775      746500
+ 1776              	.LASF56:
+ 1777 0c9a 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 1777      455F4556 
+ 1777      545F4741 
+ 1777      5454435F 
+ 1777      46494E44 
+ 1778              	.LASF36:
+ 1779 0cc1 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 1779      455F4556 
+ 1779      545F4741 
+ 1779      505F4B45 
+ 1779      59494E46 
+ 1780              	.LASF78:
+ 1781 0ce5 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 1781      455F4556 
+ 1781      545F4C32 
+ 1781      4341505F 
+ 1781      43424643 
+ 1782              	.LASF74:
+ 1783 0d06 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 1783      455F4556 
+ 1783      545F4C32 
+ 1783      4341505F 
+ 1783      434F4E4E 
+ 1784              	.LASF142:
+ 1785 0d2c 6D61696E 		.ascii	"main\000"
+ 1785      00
+ 1786              	.LASF41:
+ARM GAS  C:\Users\FIRSTP~1\AppData\Local\Temp\cc0XGUpP.s 			page 42
+
+
+ 1787 0d31 4359424C 		.ascii	"CYBLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ 1787      455F4556 
+ 1787      545F4741 
+ 1787      505F454E 
+ 1787      48414E43 
+ 1788              	.LASF89:
+ 1789 0d55 4359424C 		.ascii	"CYBLE_GATT_DB_ATTR_HANDLE_T\000"
+ 1789      455F4741 
+ 1789      54545F44 
+ 1789      425F4154 
+ 1789      54525F48 
+ 1790              	.LASF50:
+ 1791 0d71 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND\000"
+ 1791      455F4556 
+ 1791      545F4741 
+ 1791      54545F44 
+ 1791      4953434F 
+ 1792              	.LASF87:
+ 1793 0d8f 4359424C 		.ascii	"CYBLE_EVT_FLASH_CORRUPT\000"
+ 1793      455F4556 
+ 1793      545F464C 
+ 1793      4153485F 
+ 1793      434F5252 
+ 1794              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

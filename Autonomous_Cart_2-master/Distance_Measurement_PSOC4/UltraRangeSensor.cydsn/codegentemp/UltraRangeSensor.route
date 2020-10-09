@@ -1,0 +1,52 @@
+net Net_619
+	term   ":ioport1:pin0.fb"
+	switch ":ioport1:pin0.fb==>:ioport1:hsiom_in0.hsiom0_in"
+	switch ":ioport1:hsiom_in0.dsi==>Stub-:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v0+:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v2"
+	switch "OStub-:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v0+:dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:v2"
+	switch ":dsiswitch_bottom@[DSI=(1,0)][side=bottom]:dsihc_bottom:0,67"
+	switch ":hvswitch@[UDB=(2,0)][side=left]:3,67_f"
+	switch ":hvswitch@[UDB=(2,0)][side=left]:vseg_3_top_b"
+	switch ":hvswitch@[UDB=(1,0)][side=left]:vseg_3_top_b"
+	switch ":hvswitch@[UDB=(0,0)][side=left]:3,67_b"
+	switch ":hvswitch@[UDB=(0,0)][side=left]:hseg_67_f"
+	switch ":dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:56,67_f"
+	switch "IStub-:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v56+:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v58"
+	switch "Stub-:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v56+:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v58==>:m0s8tcpwmcell_0_permute.tr_in<0>"
+	switch ":m0s8tcpwmcell_0_permute.count==>:m0s8tcpwmcell_0.count"
+	term   ":m0s8tcpwmcell_0.count"
+	switch ":m0s8tcpwmcell_0_permute.stop==>:m0s8tcpwmcell_0.stop"
+	term   ":m0s8tcpwmcell_0.stop"
+	switch ":m0s8tcpwmcell_0_permute.start==>:m0s8tcpwmcell_0.start"
+	term   ":m0s8tcpwmcell_0.start"
+end Net_619
+net ClockBlock_HFClk
+	term   ":m0s8clockblockcell.hfclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_12.clock"
+	term   ":interrupt_12.clock"
+end ClockBlock_HFClk
+net Net_25
+	term   ":m0s8tcpwmcell_1.line"
+	switch ":m0s8tcpwmcell_1.line==>Stub-:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v17+:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v19"
+	switch "Stub-:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v17+:dsiswitch_top@[DSI=(0,1)][side=top]:dsihc_top:v19==>:ioport1:hsiom_out2.fixed_ACT_0"
+	switch ":ioport1:hsiom_out2.hsiom2_out==>:ioport1:pin2.pin_input"
+	term   ":ioport1:pin2.pin_input"
+end Net_25
+net \BLE:Net_15\
+	term   ":p4blecell.interrupt"
+	switch ":p4blecell.interrupt==>:interrupt_idmux_12.in_0"
+	switch ":interrupt_idmux_12.interrupt_idmux_12__out==>:interrupt_12.interrupt"
+	term   ":interrupt_12.interrupt"
+end \BLE:Net_15\
+net \UART:rx_wire\
+	term   ":ioport0:pin4.fb"
+	switch ":ioport0:pin4.fb==>:ioport0:hsiom_in4.hsiom4_in"
+	switch ":ioport0:hsiom_in4.fixed_ACT_1==>:m0s8scbcell_0__uart_rx__hsiom_permute.ioport0__fixed_out_p4_ACT_1"
+	switch ":m0s8scbcell_0__uart_rx__hsiom_permute.m0s8scbcell_0__uart_rx==>:m0s8scbcell_0.uart_rx"
+	term   ":m0s8scbcell_0.uart_rx"
+end \UART:rx_wire\
+net \UART:tx_wire\
+	term   ":m0s8scbcell_0.uart_tx"
+	switch ":m0s8scbcell_0.uart_tx==>:ioport0:hsiom_out5.fixed_ACT_1"
+	switch ":ioport0:hsiom_out5.hsiom5_out==>:ioport0:pin5.pin_input"
+	term   ":ioport0:pin5.pin_input"
+end \UART:tx_wire\

@@ -1,0 +1,7 @@
+C:\Users\first processor\Downloads\Project_Onderzoek\UltraRangeSensor.cydsn\UltraRangeSensor.cyprj|5792434f-f507-4eb2-a775-f60912637a94
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|2fafbe6e-12e8-4d94-84f1-cffbc7b3205e
+C:\Users\first processor\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|7e4170f5-c37c-46b0-a673-6c225085cd5f
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|94ebcf96-1409-4ae6-9b86-7035f9effda4
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8ea81332-e3e0-418e-b026-845762cf2248
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0a2e8393-4b76-4604-b81a-66b5fa4c64c9
+C:\Users\first processor\Downloads\Project_Onderzoek\UltraRangeSensor.cydsn\POZ.cydsn\POZ.cyprj|b49bcf89-3d7c-4cf5-8f60-3e99a50dfcbc

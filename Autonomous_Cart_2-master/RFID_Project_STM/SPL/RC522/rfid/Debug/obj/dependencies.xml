@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dependencies>
+   <includePath signature="/IE:\!stm_vkgps\103-RC522 /IE:\!stm_vkgps /IE:\!stm_vkgps\103-RC522\cmsis_boot /IE:\!stm_vkgps\103-RC522\cmsis /IE:\!stm_vkgps\103-RC522\myInclude">
+      <source file="..\..\..\myInclude\delay.h" lastModified="15515f914be">
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f10x.h" lastModified="15508a4afda">
+         <include file="..\..\..\cmsis\core_cm3.h"/>
+         <include file="..\..\..\cmsis_boot\system_stm32f10x.h"/>
+         <include file="..\..\..\cmsis_boot\stm32f10x_conf.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="15508a4ae4f">
+      </source>
+      <source file="..\..\..\myInclude\delay.c" lastModified="15515f97e51">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\myInclude\delay.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="15508a4ac19">
+      </source>
+      <source file="..\..\..\myInclude\uart.h" lastModified="1551677b62a">
+      </source>
+      <source file="..\..\..\myInclude\uart.c" lastModified="15516787421">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\myInclude\delay.h"/>
+         <include file="..\..\..\myInclude\gpio.h"/>
+         <include file="..\..\..\myInclude\uart.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cm3.h" lastModified="15508a4aa4a">
+         <include file="..\..\..\cmsis\core_cmInstr.h"/>
+         <include file="..\..\..\cmsis\core_cmFunc.h"/>
+      </source>
+      <source file="..\..\..\myInclude\rc522.h" lastModified="155160b82d1">
+      </source>
+      <source file="..\..\..\myInclude\gpio.h" lastModified="1550c8e306c">
+      </source>
+      <source file="..\..\..\myInclude\rc522.c" lastModified="1551665fda5">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\myInclude\gpio.h"/>
+         <include file="..\..\..\myInclude\rc522.h"/>
+         <include file="..\..\..\myInclude\spi.h"/>
+         <include file="..\..\..\myInclude\uart.h"/>
+      </source>
+      <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="15508a4ae40">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="15508a4ae2e">
+      </source>
+      <source file="..\..\..\myInclude\gpio.c" lastModified="1550c938eea">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\myInclude\gpio.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_ld.c" lastModified="15508a4ab81">
+      </source>
+      <source file="..\..\..\myInclude\spi.h" lastModified="15515fbfedc">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="15508a4ae25">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+      <source file="..\..\..\myInclude\spi.c" lastModified="1551668795e">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+         <include file="..\..\..\myInclude\spi.h"/>
+      </source>
+   </includePath>
+   <includePath signature="/IE:\!stm_vkgps\103-RC522 /IE:\!stm_vkgps /IE:\!stm_vkgps\103-RC522\cmsis_boot /IE:\!stm_vkgps\103-RC522\cmsis">
+      <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="15508a4ac19">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="15508a4ae2e">
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_ld.c" lastModified="15508a4ab81">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="15508a4ae25">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+   </includePath>
+   <includePath signature="/IE:\!stm_vkgps\103-RC522 /IE:\!stm_vkgps /IE:\!stm_vkgps\103-RC522\cmsis_boot /IE:\!stm_vkgps\103-RC522\rc522 /IE:\!stm_vkgps\103-RC522\cmsis">
+      <source file="..\..\..\cmsis_boot\stm32f10x_conf.h" lastModified="15508a4ac19">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.h" lastModified="15508a4ae2e">
+      </source>
+      <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_ld.c" lastModified="15508a4ab81">
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="15508a4ae25">
+         <include file="..\..\..\cmsis_boot\stm32f10x.h"/>
+      </source>
+   </includePath>
+</dependencies>

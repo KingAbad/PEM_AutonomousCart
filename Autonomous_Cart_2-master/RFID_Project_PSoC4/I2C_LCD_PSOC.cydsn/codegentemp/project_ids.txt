@@ -1,0 +1,6 @@
+C:\Users\Abad_Sethi\Desktop\AbadPxl\2-EAI\Project_Onderzoek\Autonomous_Cart\AutonomousCart\I2C_LCD_PSOC.cydsn\I2C_LCD_PSOC.cyprj|0e5721ef-1012-4b75-9cb9-56cee90c47db
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|72c6cbff-51fb-4ae3-be5e-55ba98c0ff42
+E:\OneDrive\Documenten\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|09a55a20-ef47-4a4d-a9d6-bda5066a1018
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fd2ea1bf-1b89-49a6-b792-f75a230e4a08
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|576a7975-fccd-4003-99ec-368f2f0b38c2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|45491f6e-864b-4773-8751-ece9c6f6197e

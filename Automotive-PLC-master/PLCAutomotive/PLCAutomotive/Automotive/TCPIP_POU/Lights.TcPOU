@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.3">
+  <POU Name="Lights" Id="{40b29097-741a-4b94-8274-639146bd4105}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Lights
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF RunTCP.sCommand = 'BL1' THEN	//blinker left on	//These are connected to the blinker relay, so only high signal suffices
+    GVL_Lights.BlinkerLeft    := TRUE;
+    GVL_Lights.BlinkerRight   := FALSE;
+ELSIF RunTCP.sCommand = 'BL0' THEN	//blinker left off
+    GVL_Lights.BlinkerLeft    := FALSE;
+    GVL_Lights.BlinkerRight := FALSE;
+ELSIF RunTCP.sCommand = 'BR1' THEN	//blinker right on
+    GVL_Lights.BlinkerRight   := TRUE;
+    GVL_Lights.BlinkerLeft    := FALSE;
+ELSIF RunTCP.sCommand = 'BR0' THEN	//blinker right off
+    GVL_Lights.BlinkerRight  := FALSE;
+    GVL_Lights.BlinkerLeft   := FALSE;
+ELSIF RunTCP.sCommand = 'L1' THEN //lights on
+	GVL_Lights.LightsFront := TRUE;
+	GVL_Lights.LightsRear := TRUE;
+ELSIF RunTCP.sCommand = 'L0' THEN	//lights off
+	GVL_Lights.LightsFront := FALSE;
+	GVL_Lights.LightsRear := FALSE;
+	//TODO link to reverse
+(*ELSIF RunTCP.sCommand = 'ron' THEN	//reverse light on
+	GVL_Lights.LightsReverse := TRUE;
+ELSIF RunTCP.sCommand = 'roff' THEN	//reverse light off
+	GVL_Lights.LightsReverse := FALSE;*)
+ELSIF RunTCP.sCommand = 'B1' THEN	//brake light on
+	GVL_Lights.LightsBrake := TRUE;
+ELSIF RunTCP.sCommand = 'B0' THEN	//brake light off
+	GVL_Lights.LightsBrake := FALSE;
+ELSE
+    GVL_Lights.BlinkerRight := FALSE;
+    GVL_Lights.BlinkerLeft  := FALSE;
+
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="Lights">
+      <LineId Id="6" Count="17" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="24" Count="11" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

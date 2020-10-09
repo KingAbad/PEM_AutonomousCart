@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=rfid.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\rfid -TC:\CooCox\CoIDE\configuration\ProgramData\rfid/arm-gcc-link.ld -g">
+      <target file="rfid.elf" lastModified="15516a37faa">
+         <source file="..\obj\spi.o" lastModified="155167da7f5"/>
+         <source file="..\obj\startup_stm32f10x_ld.o" lastModified="1550c1d10c4"/>
+         <source file="..\obj\delay.o" lastModified="15515ff95de"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="1550c1d1150"/>
+         <source file="..\obj\uart.o" lastModified="155167da999"/>
+         <source file="..\obj\main.o" lastModified="15516a37da0"/>
+         <source file="..\obj\gpio.o" lastModified="1550c93cad1"/>
+         <source file="..\obj\rc522.o" lastModified="155167daaf7"/>
+      </target>
+   </processor>
+</history>

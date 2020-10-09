@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m3 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F103C6 -DSTM32F10X_LD -IE:\!stm_vkgps\103-RC522 -IE:\!stm_vkgps -IE:\!stm_vkgps\103-RC522\cmsis_boot -IE:\!stm_vkgps\103-RC522\cmsis -IE:\!stm_vkgps\103-RC522\myInclude">
+      <target file="uart.o" lastModified="155167da999">
+         <source file="..\..\..\myInclude\uart.c" lastModified="15516787421"/>
+      </target>
+      <target file="startup_stm32f10x_ld.o" lastModified="1550c1d10c4">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f10x_ld.c" lastModified="15508a4ab81"/>
+      </target>
+      <target file="mfrc522.o" lastModified="15515ff9683">
+         <source file="..\..\..\myInclude\mfrc522.c" lastModified="15515fea6c6"/>
+      </target>
+      <target file="system_stm32f10x.o" lastModified="1550c1d1150">
+         <source file="..\..\..\cmsis_boot\system_stm32f10x.c" lastModified="15508a4ae25"/>
+      </target>
+      <target file="rc522.o" lastModified="155167daaf7">
+         <source file="..\..\..\myInclude\rc522.c" lastModified="1551665fda5"/>
+      </target>
+      <target file="main.o" lastModified="15516a37da0">
+         <source file="..\..\..\main.c" lastModified="15516a37564"/>
+      </target>
+      <target file="spi.o" lastModified="155167da7f5">
+         <source file="..\..\..\myInclude\spi.c" lastModified="1551668795e"/>
+      </target>
+      <target file="gpio.o" lastModified="1550c93cad1">
+         <source file="..\..\..\myInclude\gpio.c" lastModified="1550c938eea"/>
+      </target>
+      <target file="delay.o" lastModified="15515ff95de">
+         <source file="..\..\..\myInclude\delay.c" lastModified="15515f97e51"/>
+      </target>
+   </processor>
+</history>
