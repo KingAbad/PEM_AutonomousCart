@@ -20,4 +20,4 @@ PEM_Autonomous cart is the continuation of the subject **Project Reasearch** giv
 
 ### Used Programs
 
-* **M-Center** - For the 4G-module from mikroe - 
+* **M-Center** - For testing the 4G-module from mikroe - 
