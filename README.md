@@ -16,6 +16,8 @@ PEM_Autonomous cart is the continuation of the subject **Project Reasearch** giv
 * **Berkan Ipek** - Developer  
 * **Abad Sethi**        - Developer  - [LinkedIn](https://www.linkedin.com/in/abad-sethi-83246a170/)
 * **Kazim Bozca**       - Developer
-* **Metehan Altintas**   - Developer 
+* **Metehan Altintas**   - Developer  - [LinkedIn](https://www.linkedin.com/in/metehan-altintas-4ab07a1aa/)
 
-###used Programs
+### Used Programs
+
+* **M-Center** - For the 4G-module from mikroe - 
