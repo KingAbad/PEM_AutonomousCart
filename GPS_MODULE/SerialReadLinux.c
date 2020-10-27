@@ -66,7 +66,7 @@
 
 		/* Change /dev/ttyUSB0 to the one corresponding to your system */
 
-        	fd = open("/dev/ttyUSB0",O_RDWR | O_NOCTTY);	/* ttyUSB0 is the FT232 based USB2SERIAL Converter   */
+        	fd = open("/dev/ttyACM0",O_RDWR | O_NOCTTY);	/* ttyUSB0 is the FT232 based USB2SERIAL Converter   */
 			   					/* O_RDWR   - Read/Write access to serial port       */
 								/* O_NOCTTY - No terminal will control the process   */
 								/* Open in blocking mode,read will wait              */
@@ -112,6 +112,7 @@
 		if((tcsetattr(fd,TCSANOW,&SerialPortSettings)) != 0) /* Set the attributes to the termios structure*/
 		    printf("\n  ERROR ! in Setting attributes");
 		else
+			{
                     printf("\n  BaudRate = 9600 \n  StopBits = 1 \n  Parity   = none");
 			
 	        /*------------------------------- Read data from serial port -----------------------------*/
@@ -119,20 +120,46 @@
 		tcflush(fd, TCIFLUSH);   /* Discards old data in the rx buffer            */
 
 		char read_buffer[32];   /* Buffer to store the data received              */
+		char * strnparse_buffer[5];	/////////////////////////////////////////////////////// Mess with this
 		int  bytes_read = 0;    /* Number of bytes read by the read() system call */
  		int i = 0;
-
-		bytes_read = read(fd,&read_buffer,32); /* Read the data                   */
+		printf("\n");
+		
+		for(;;)	//Infinite loop repeats program
+		{
 			
-		printf("\n\n  Bytes Rxed -%d", bytes_read); /* Print the number of bytes read */
-		printf("\n\n  ");
+			bytes_read = read(fd,&read_buffer,32); /* Read the data                   */
+			
+			//Clear array using memset for string parsing
+			//memset(strnparse_buffer, 0, sizeof(strnparse_buffer));
+			
+			//printf("\n\n  Bytes Rxed -%d", bytes_read); /* Print the number of bytes read */
+			//printf("\n\n  ");
+			if(strncmp(&read_buffer, "$GNRMC", 5) == 0)
+			{
+				char * splitToken = strtok(&read_buffer, ",");
+				int counter = 0;
+				while(splitToken != NULL)
+				{
+					
+					strnparse_buffer[counter] = &splitToken;		//////////Something wrong here too
+					printf("%s\n", strnparse_buffer[counter]);
+					splitToken = strtok(NULL, ",");
+					counter++;
+				}
+				counter = 0;
+				for(i = 0; i < bytes_read; i++)	 /*printing only the received characters*/
+				{
+					printf("%c", read_buffer[i]);
+				}
+				printf("\n");
+				
+			}
+				
+		}
 
-		for(i=0;i<bytes_read;i++)	 /*printing only the received characters*/
-		    printf("%c",read_buffer[i]);
-	
-		printf("\n +----------------------------------+\n\n\n");
-
-		close(fd); /* Close the serial port */
+			close(fd); /* Close the serial port */
 
     	}
+		}
 
