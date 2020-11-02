@@ -45,9 +45,10 @@ try:
             #gpslist = gpssplitlist #okay don't do that
             gpslist[0] = gpssplitlist[1] #time hhmmss.ss
             gpslist[1] = gpssplitlist[2] #status, A = available, V = gps unavailable, maybe have a wait here until it becomes available
-            gpslist[2] = ConvertLat(gpssplitlist[3], gpssplitlist[4])
-            gpslist[3] = gpssplitlist[4]
-            gpslist[4] = ConvertLat(gpssplitlist[5], gpssplitlist[6])
+            if gpslist[1] == 'A':
+                gpslist[2] = ConvertLat(gpssplitlist[3], gpssplitlist[4])
+                gpslist[4] = ConvertLat(gpssplitlist[5], gpssplitlist[6])
+            gpslist[3] = gpssplitlist[4] 
             gpslist[5] = gpssplitlist[6]
             gpslist[6] = gpssplitlist[7] #speed over ground in knots
             gpslist[7] = gpssplitlist[8] #course over ground in degrees
