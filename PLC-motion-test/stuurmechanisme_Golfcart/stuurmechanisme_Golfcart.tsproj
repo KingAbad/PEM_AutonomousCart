@@ -1460,14 +1460,16 @@ External Setpoint Generation:
 					<Name>Axis 1</Name>
 					<AxisPara>
 						<Dynamic Acceleration="2025" Deceleration="2025" Jerk="164025"/>
+						<Velo RefSearch="100" RefSync="100" Maximum="3600"/>
+						<PositionAreaControl Enable="false"/>
 						<TargetPosControl Enable="false"/>
+						<PEHControl Enable="true"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="4">
-						<EncPara MaxCount="#x0000ffff">
+					<Encoder Name="Enc" EncType="1">
+						<EncPara>
 							<Inc RefSoftSyncMask="#x0000ffff"/>
 							<TimeComp TimeCompMode="1" EncDelayCycles="4"/>
-							<ParameterChanged>0</ParameterChanged>
 						</EncPara>
 						<Vars VarGrpType="1">
 							<Name>Inputs</Name>
@@ -1602,6 +1604,7 @@ External Setpoint Generation:
 					<Controller Name="Ctrl" CtrType="1">
 						<CtrPara PriorControlFactor="1">
 							<PosDiffControl Enable="false"/>
+							<PID PosKp="5"/>
 							<Observer BandWidth="20"/>
 						</CtrPara>
 					</Controller>
@@ -1660,6 +1663,25 @@ External Setpoint Generation:
 			</Project>
 		</Plc>
 		<Io>
+			<Device Id="4" DevType="121">
+				<Name>Device 4 (NOV-DP-RAM)</Name>
+				<AddressInfo>
+					<Isa>
+						<Address>-267386880</Address>
+						<Size>131072</Size>
+					</Isa>
+				</AddressInfo>
+				<Vars VarGrpType="1" InsertType="1">
+					<Name>Inputs</Name>
+				</Vars>
+				<Vars VarGrpType="2" InsertType="1">
+					<Name>Outputs</Name>
+				</Vars>
+				<Image Id="5" ImageFlags="#x00000042" AddrType="12" ImageType="5">
+					<Name>Image</Name>
+				</Image>
+				<DpRam/>
+			</Device>
 			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.79.233.76.2.1" RemoteName="Device 1 (EtherCAT)">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
@@ -3428,25 +3450,6 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 					</Box>
 				</Box>
 				<EtherCAT/>
-			</Device>
-			<Device Id="4" DevType="121">
-				<Name>Device 4 (NOV-DP-RAM)</Name>
-				<AddressInfo>
-					<Isa>
-						<Address>-267386880</Address>
-						<Size>131072</Size>
-					</Isa>
-				</AddressInfo>
-				<Vars VarGrpType="1" InsertType="1">
-					<Name>Inputs</Name>
-				</Vars>
-				<Vars VarGrpType="2" InsertType="1">
-					<Name>Outputs</Name>
-				</Vars>
-				<Image Id="5" ImageFlags="#x00000042" AddrType="12" ImageType="5">
-					<Name>Image</Name>
-				</Image>
-				<DpRam/>
 			</Device>
 		</Io>
 	</Project>

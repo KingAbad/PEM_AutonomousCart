@@ -13,6 +13,7 @@ VAR
 	ExecuteMovement : BOOL;
 	ExecuteMovement1 : BOOL;
 	MC_MoveAbsolute_0: MC_MoveAbsolute;
+	HomingMode : MC_HomingMode := MC_DefaultHoming;
 	MC_Home_0: MC_Home;
 	StartHoming: BOOL;
 	endSW AT %I*: BOOL;
@@ -476,8 +477,8 @@ END_VAR
                         </o>
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"200"</v>
-                            <v n="Type">"USINT"</v>
+                            <v n="Operand">"2000"</v>
+                            <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -495,7 +496,7 @@ END_VAR
                         </o>
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">""</v>
+                            <v n="Operand">"HomingMode"</v>
                             <v n="Type">"MC_HomingMode"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -863,7 +864,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"50"</v>
+                            <v n="Operand">"350"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -882,7 +883,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"10"</v>
+                            <v n="Operand">"1500"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -901,7 +902,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"10"</v>
+                            <v n="Operand">"1500"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -920,8 +921,8 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"50"</v>
-                            <v n="Type">"INT"</v>
+                            <v n="Operand">"164025.0"</v>
+                            <v n="Type">"LREAL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -1072,8 +1073,8 @@ END_VAR
                       <l2 n="InputItems" cet="BoxTreeOperand">
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"200"</v>
-                            <v n="Type">"USINT"</v>
+                            <v n="Operand">"2000"</v>
+                            <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -1365,8 +1366,8 @@ END_VAR
                       <l2 n="InputItems" cet="BoxTreeOperand">
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"200"</v>
-                            <v n="Type">"USINT"</v>
+                            <v n="Operand">"2000"</v>
+                            <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
