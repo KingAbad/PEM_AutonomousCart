@@ -3,6 +3,7 @@
 #import libs
 import serial
 import sys
+import requests
 
 #Open serial port
 #run "dmesg | grep tty" in terminal to see serial ports
@@ -61,6 +62,10 @@ try:
             gpslist[8] = gpssplitlist[9] #UTC date ddmmyy
             #buf2 = gpssplitlist[10].split('*')
             #gpslist[9] = buf2[0] #mode N = invalid, A = auto, D = differential, E = estimated
+            
+            #write to database
+            payload = {'lon' : gpslist[2], 'lat' : gpslist[3]}
+            r = requests.get(url, payload)
             print(gpslabel)
             print(gpslist)
         
