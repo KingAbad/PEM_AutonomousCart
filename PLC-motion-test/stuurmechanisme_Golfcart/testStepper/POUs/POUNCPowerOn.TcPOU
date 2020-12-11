@@ -21,7 +21,7 @@ VAR
 	MC_Reset_0: MC_Reset;
 	reset: BOOL;
 	PositionToDegree_0: PositionToDegree;
-	steps: LREAL := 450;
+	steps: LREAL := 222;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -478,7 +478,7 @@ END_VAR
                         </o>
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"450"</v>
+                            <v n="Operand">"0"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -1093,7 +1093,7 @@ END_VAR
                         </o>
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"45"</v>
+                            <v n="Operand">"90"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
