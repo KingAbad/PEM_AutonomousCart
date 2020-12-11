@@ -21,6 +21,7 @@ VAR
 	MC_Reset_0: MC_Reset;
 	reset: BOOL;
 	PositionToDegree_0: PositionToDegree;
+	steps: LREAL := 450;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -477,7 +478,7 @@ END_VAR
                         </o>
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"2000"</v>
+                            <v n="Operand">"450"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -864,8 +865,8 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"350"</v>
-                            <v n="Type">"INT"</v>
+                            <v n="Operand">"150"</v>
+                            <v n="Type">"USINT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -883,7 +884,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"1500"</v>
+                            <v n="Operand">"2000"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -902,7 +903,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"1500"</v>
+                            <v n="Operand">"2000"</v>
                             <v n="Type">"INT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -1073,8 +1074,8 @@ END_VAR
                       <l2 n="InputItems" cet="BoxTreeOperand">
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"2000"</v>
-                            <v n="Type">"INT"</v>
+                            <v n="Operand">"steps"</v>
+                            <v n="Type">"LREAL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -1366,8 +1367,8 @@ END_VAR
                       <l2 n="InputItems" cet="BoxTreeOperand">
                         <o>
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"2000"</v>
-                            <v n="Type">"INT"</v>
+                            <v n="Operand">"steps"</v>
+                            <v n="Type">"LREAL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>

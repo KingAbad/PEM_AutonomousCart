@@ -1337,7 +1337,7 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000001}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..0] OF BIT</Name>
 			<BitSize>1</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1346,7 +1346,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000004}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..3] OF BIT</Name>
 			<BitSize>4</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1355,7 +1355,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000006}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..5] OF BIT</Name>
 			<BitSize>6</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1364,7 +1364,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000002}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..1] OF BIT</Name>
 			<BitSize>2</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1391,7 +1391,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000C}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..11] OF BIT</Name>
 			<BitSize>12</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1400,7 +1400,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1409,7 +1409,7 @@ External Setpoint Generation:
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000D}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..12] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000D}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..12] OF BIT</Name>
 			<BitSize>13</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -1459,16 +1459,15 @@ External Setpoint Generation:
 				<Axis Id="1" CreateSymbols="true" AxisType="1">
 					<Name>Axis 1</Name>
 					<AxisPara>
-						<Dynamic Acceleration="2025" Deceleration="2025" Jerk="164025"/>
+						<Dynamic Acceleration="18179.9" Deceleration="18179.9" Jerk="9180810"/>
 						<Velo RefSearch="100" RefSync="100" Maximum="3600"/>
-						<PositionAreaControl Enable="false"/>
 						<TargetPosControl Enable="false"/>
 						<PEHControl Enable="true"/>
 						<OtherSettings AllowMotionCmdToSlave="true"/>
 					</AxisPara>
-					<Encoder Name="Enc" EncType="1">
-						<EncPara>
-							<Inc RefSoftSyncMask="#x0000ffff"/>
+					<Encoder Name="Enc" EncType="4">
+						<EncPara ScaleFactorNumerator="0.1" MaxCount="#x0000ffff">
+							<Inc RefSearchInverse="true" RefSyncInverse="false" RefMode="2" RefSoftSyncMask="#x0000ffff"/>
 							<TimeComp TimeCompMode="1" EncDelayCycles="4"/>
 						</EncPara>
 						<Vars VarGrpType="1">
@@ -1603,7 +1602,7 @@ External Setpoint Generation:
 					</Drive>
 					<Controller Name="Ctrl" CtrType="1">
 						<CtrPara PriorControlFactor="1">
-							<PosDiffControl Enable="false"/>
+							<PosDiffControl Enable="false" Range="150" Time="1"/>
 							<PID PosKp="5"/>
 							<Observer BandWidth="20"/>
 						</CtrPara>
@@ -2809,43 +2808,43 @@ Bit1: Value bigger/equal Limit2]]></Comment>
 							<MBoxUserCmdData>004003000a00000000000000030010000000000000000000000000000000000020f3100502000000010000</MBoxUserCmdData>
 							<Pdo Name="ENC Status compact" Index="#x1a00" Flags="#x0010" SyncMan="3">
 								<ExcludePdo>#x1a01</ExcludePdo>
-								<Entry Name="Status__Latch C valid" Index="#x6000" Sub="#x01">
+								<Entry Name="Status__Latch C valid" Index="#x6000" Sub="#x01" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Latch extern valid" Index="#x6000" Sub="#x02">
+								<Entry Name="Status__Latch extern valid" Index="#x6000" Sub="#x02" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03">
+								<Entry Name="Status__Set counter done" Index="#x6000" Sub="#x03" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Counter underflow" Index="#x6000" Sub="#x04">
+								<Entry Name="Status__Counter underflow" Index="#x6000" Sub="#x04" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Counter overflow" Index="#x6000" Sub="#x05">
+								<Entry Name="Status__Counter overflow" Index="#x6000" Sub="#x05" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Status__">
 									<Type GUID="{18071995-0000-0000-0000-002000000002}">ARRAY [0..1] OF BIT</Type>
 								</Entry>
-								<Entry Name="Status__Extrapolation stall" Index="#x6000" Sub="#x08">
+								<Entry Name="Status__Extrapolation stall" Index="#x6000" Sub="#x08" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Status of input A" Index="#x6000" Sub="#x09">
+								<Entry Name="Status__Status of input A" Index="#x6000" Sub="#x09" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Status of input B" Index="#x6000" Sub="#x0a">
+								<Entry Name="Status__Status of input B" Index="#x6000" Sub="#x0a" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Status of input C" Index="#x6000" Sub="#x0b">
+								<Entry Name="Status__Status of input C" Index="#x6000" Sub="#x0b" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Status__">
 									<Type GUID="{18071995-0000-0000-0000-002000000001}">ARRAY [0..0] OF BIT</Type>
 								</Entry>
-								<Entry Name="Status__Status of extern latch" Index="#x6000" Sub="#x0d">
+								<Entry Name="Status__Status of extern latch" Index="#x6000" Sub="#x0d" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Sync error" Index="#x6000" Sub="#x0e">
+								<Entry Name="Status__Sync error" Index="#x6000" Sub="#x0e" Flags="#x00000020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Status__">
