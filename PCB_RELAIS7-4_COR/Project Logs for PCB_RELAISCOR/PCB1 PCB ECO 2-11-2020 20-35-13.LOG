@@ -1,0 +1,287 @@
+Added Component: Designator=D1(DiodeFLY)
+Added Component: Designator=D2(DiodeFLY)
+Added Component: Designator=D3(DiodeFLY)
+Added Component: Designator=D4(DiodeFLY)
+Added Component: Designator=D5(DiodeFLY)
+Added Component: Designator=D6(DiodeFLY)
+Added Component: Designator=D7(DiodeFLY)
+Added Component: Designator=D8(DiodeFLY)
+Added Component: Designator=D9(DiodeFLY)
+Added Component: Designator=D10(DiodeFLY)
+Added Component: Designator=D11(DiodeFLY)
+Added Component: Designator=D12(DiodeFLY)
+Added Component: Designator=D13(DiodeFLY)
+Added Component: Designator=FNRTOMC(HDR2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P11(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P12(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P13(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P14(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P15(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P16(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P17(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P18(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P19(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P21(HDR4)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P22(HDR2)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P110(HDR3)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=P(HDR14)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Added Component: Designator=R11(EENPOOL)
+Added Component: Designator=R12(EENPOOL)
+Added Component: Designator=R13(EENPOOL)
+Added Component: Designator=R14(EENPOOL)
+Added Component: Designator=R15(EENPOOL)
+Added Component: Designator=R16(EENPOOL)
+Added Component: Designator=R17(EENPOOL)
+Added Component: Designator=R18(EENPOOL)
+Added Component: Designator=R19(EENPOOL)
+Added Component: Designator=R21(TWEEPOOL)
+Added Component: Designator=R22(TWEEPOOL)
+Added Component: Designator=R110(EENPOOL)
+Added Component: Designator=R111(EENPOOL)
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=P-3
+Added Pin To Net: NetName=NetD1_1 Pin=R11-1
+Added Net: Name=NetD1_1
+Added Pin To Net: NetName=NetD1_2 Pin=D1-2
+Added Pin To Net: NetName=NetD1_2 Pin=D2-2
+Added Pin To Net: NetName=NetD1_2 Pin=D3-2
+Added Pin To Net: NetName=NetD1_2 Pin=D4-2
+Added Pin To Net: NetName=NetD1_2 Pin=D5-2
+Added Pin To Net: NetName=NetD1_2 Pin=D6-2
+Added Pin To Net: NetName=NetD1_2 Pin=D7-2
+Added Pin To Net: NetName=NetD1_2 Pin=D8-2
+Added Pin To Net: NetName=NetD1_2 Pin=D9-2
+Added Pin To Net: NetName=NetD1_2 Pin=D10-2
+Added Pin To Net: NetName=NetD1_2 Pin=D11-2
+Added Pin To Net: NetName=NetD1_2 Pin=D12-2
+Added Pin To Net: NetName=NetD1_2 Pin=D13-2
+Added Pin To Net: NetName=NetD1_2 Pin=P-1
+Added Pin To Net: NetName=NetD1_2 Pin=R11-2
+Added Pin To Net: NetName=NetD1_2 Pin=R12-2
+Added Pin To Net: NetName=NetD1_2 Pin=R13-2
+Added Pin To Net: NetName=NetD1_2 Pin=R14-2
+Added Pin To Net: NetName=NetD1_2 Pin=R15-2
+Added Pin To Net: NetName=NetD1_2 Pin=R16-2
+Added Pin To Net: NetName=NetD1_2 Pin=R17-2
+Added Pin To Net: NetName=NetD1_2 Pin=R18-2
+Added Pin To Net: NetName=NetD1_2 Pin=R19-2
+Added Pin To Net: NetName=NetD1_2 Pin=R21-2
+Added Pin To Net: NetName=NetD1_2 Pin=R22-2
+Added Pin To Net: NetName=NetD1_2 Pin=R110-2
+Added Pin To Net: NetName=NetD1_2 Pin=R111-2
+Added Net: Name=NetD1_2
+Added Pin To Net: NetName=NetD2_1 Pin=D2-1
+Added Pin To Net: NetName=NetD2_1 Pin=P-2
+Added Pin To Net: NetName=NetD2_1 Pin=R12-1
+Added Net: Name=NetD2_1
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=P-4
+Added Pin To Net: NetName=NetD3_1 Pin=R13-1
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetD4_1 Pin=D4-1
+Added Pin To Net: NetName=NetD4_1 Pin=P-5
+Added Pin To Net: NetName=NetD4_1 Pin=R14-1
+Added Net: Name=NetD4_1
+Added Pin To Net: NetName=NetD5_1 Pin=D5-1
+Added Pin To Net: NetName=NetD5_1 Pin=P-9
+Added Pin To Net: NetName=NetD5_1 Pin=R15-1
+Added Net: Name=NetD5_1
+Added Pin To Net: NetName=NetD6_1 Pin=D6-1
+Added Pin To Net: NetName=NetD6_1 Pin=P-10
+Added Pin To Net: NetName=NetD6_1 Pin=R16-1
+Added Net: Name=NetD6_1
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=P-11
+Added Pin To Net: NetName=NetD7_1 Pin=R17-1
+Added Net: Name=NetD7_1
+Added Pin To Net: NetName=NetD8_1 Pin=D8-1
+Added Pin To Net: NetName=NetD8_1 Pin=P-12
+Added Pin To Net: NetName=NetD8_1 Pin=R18-1
+Added Net: Name=NetD8_1
+Added Pin To Net: NetName=NetD9_1 Pin=D9-1
+Added Pin To Net: NetName=NetD9_1 Pin=P-13
+Added Pin To Net: NetName=NetD9_1 Pin=R19-1
+Added Net: Name=NetD9_1
+Added Pin To Net: NetName=NetD10_1 Pin=D10-1
+Added Pin To Net: NetName=NetD10_1 Pin=P-14
+Added Pin To Net: NetName=NetD10_1 Pin=R110-1
+Added Net: Name=NetD10_1
+Added Pin To Net: NetName=NetD11_1 Pin=D11-1
+Added Pin To Net: NetName=NetD11_1 Pin=P-6
+Added Pin To Net: NetName=NetD11_1 Pin=R21-1
+Added Net: Name=NetD11_1
+Added Pin To Net: NetName=NetD12_1 Pin=D12-1
+Added Pin To Net: NetName=NetD12_1 Pin=P-7
+Added Pin To Net: NetName=NetD12_1 Pin=R22-1
+Added Net: Name=NetD12_1
+Added Pin To Net: NetName=NetD13_1 Pin=D13-1
+Added Pin To Net: NetName=NetD13_1 Pin=P-8
+Added Pin To Net: NetName=NetD13_1 Pin=R111-1
+Added Net: Name=NetD13_1
+Added Pin To Net: NetName=NetFNRTOMC_1 Pin=FNRTOMC-1
+Added Pin To Net: NetName=NetFNRTOMC_1 Pin=R22-3
+Added Pin To Net: NetName=NetFNRTOMC_1 Pin=R111-5
+Added Net: Name=NetFNRTOMC_1
+Added Pin To Net: NetName=NetFNRTOMC_2 Pin=FNRTOMC-2
+Added Pin To Net: NetName=NetFNRTOMC_2 Pin=R22-6
+Added Pin To Net: NetName=NetFNRTOMC_2 Pin=R111-4
+Added Net: Name=NetFNRTOMC_2
+Added Pin To Net: NetName=NetP11_1 Pin=P11-1
+Added Pin To Net: NetName=NetP11_1 Pin=R11-5
+Added Net: Name=NetP11_1
+Added Pin To Net: NetName=NetP11_2 Pin=P11-2
+Added Pin To Net: NetName=NetP11_2 Pin=R11-4
+Added Net: Name=NetP11_2
+Added Pin To Net: NetName=NetP11_3 Pin=P11-3
+Added Pin To Net: NetName=NetP11_3 Pin=R11-3
+Added Net: Name=NetP11_3
+Added Pin To Net: NetName=NetP12_1 Pin=P12-1
+Added Pin To Net: NetName=NetP12_1 Pin=R12-5
+Added Net: Name=NetP12_1
+Added Pin To Net: NetName=NetP12_2 Pin=P12-2
+Added Pin To Net: NetName=NetP12_2 Pin=R12-4
+Added Net: Name=NetP12_2
+Added Pin To Net: NetName=NetP12_3 Pin=P12-3
+Added Pin To Net: NetName=NetP12_3 Pin=R12-3
+Added Net: Name=NetP12_3
+Added Pin To Net: NetName=NetP13_1 Pin=P13-1
+Added Pin To Net: NetName=NetP13_1 Pin=R13-5
+Added Net: Name=NetP13_1
+Added Pin To Net: NetName=NetP13_2 Pin=P13-2
+Added Pin To Net: NetName=NetP13_2 Pin=R13-4
+Added Net: Name=NetP13_2
+Added Pin To Net: NetName=NetP13_3 Pin=P13-3
+Added Pin To Net: NetName=NetP13_3 Pin=R13-3
+Added Net: Name=NetP13_3
+Added Pin To Net: NetName=NetP14_1 Pin=P14-1
+Added Pin To Net: NetName=NetP14_1 Pin=R14-5
+Added Net: Name=NetP14_1
+Added Pin To Net: NetName=NetP14_2 Pin=P14-2
+Added Pin To Net: NetName=NetP14_2 Pin=R14-4
+Added Net: Name=NetP14_2
+Added Pin To Net: NetName=NetP14_3 Pin=P14-3
+Added Pin To Net: NetName=NetP14_3 Pin=R14-3
+Added Net: Name=NetP14_3
+Added Pin To Net: NetName=NetP15_1 Pin=P15-1
+Added Pin To Net: NetName=NetP15_1 Pin=R15-5
+Added Net: Name=NetP15_1
+Added Pin To Net: NetName=NetP15_2 Pin=P15-2
+Added Pin To Net: NetName=NetP15_2 Pin=R15-4
+Added Net: Name=NetP15_2
+Added Pin To Net: NetName=NetP15_3 Pin=P15-3
+Added Pin To Net: NetName=NetP15_3 Pin=R15-3
+Added Net: Name=NetP15_3
+Added Pin To Net: NetName=NetP16_1 Pin=P16-1
+Added Pin To Net: NetName=NetP16_1 Pin=R16-5
+Added Net: Name=NetP16_1
+Added Pin To Net: NetName=NetP16_2 Pin=P16-2
+Added Pin To Net: NetName=NetP16_2 Pin=R16-4
+Added Net: Name=NetP16_2
+Added Pin To Net: NetName=NetP16_3 Pin=P16-3
+Added Pin To Net: NetName=NetP16_3 Pin=R16-3
+Added Net: Name=NetP16_3
+Added Pin To Net: NetName=NetP17_1 Pin=P17-1
+Added Pin To Net: NetName=NetP17_1 Pin=R17-5
+Added Net: Name=NetP17_1
+Added Pin To Net: NetName=NetP17_2 Pin=P17-2
+Added Pin To Net: NetName=NetP17_2 Pin=R17-4
+Added Net: Name=NetP17_2
+Added Pin To Net: NetName=NetP17_3 Pin=P17-3
+Added Pin To Net: NetName=NetP17_3 Pin=R17-3
+Added Net: Name=NetP17_3
+Added Pin To Net: NetName=NetP18_1 Pin=P18-1
+Added Pin To Net: NetName=NetP18_1 Pin=R18-5
+Added Net: Name=NetP18_1
+Added Pin To Net: NetName=NetP18_2 Pin=P18-2
+Added Pin To Net: NetName=NetP18_2 Pin=R18-4
+Added Net: Name=NetP18_2
+Added Pin To Net: NetName=NetP18_3 Pin=P18-3
+Added Pin To Net: NetName=NetP18_3 Pin=R18-3
+Added Net: Name=NetP18_3
+Added Pin To Net: NetName=NetP19_1 Pin=P19-1
+Added Pin To Net: NetName=NetP19_1 Pin=R19-5
+Added Net: Name=NetP19_1
+Added Pin To Net: NetName=NetP19_2 Pin=P19-2
+Added Pin To Net: NetName=NetP19_2 Pin=R19-4
+Added Net: Name=NetP19_2
+Added Pin To Net: NetName=NetP19_3 Pin=P19-3
+Added Pin To Net: NetName=NetP19_3 Pin=R19-3
+Added Net: Name=NetP19_3
+Added Pin To Net: NetName=NetP21_1 Pin=P21-1
+Added Pin To Net: NetName=NetP21_1 Pin=R21-8
+Added Net: Name=NetP21_1
+Added Pin To Net: NetName=NetP21_2 Pin=P21-2
+Added Pin To Net: NetName=NetP21_2 Pin=R21-7
+Added Net: Name=NetP21_2
+Added Pin To Net: NetName=NetP21_3 Pin=P21-3
+Added Pin To Net: NetName=NetP21_3 Pin=R21-5
+Added Net: Name=NetP21_3
+Added Pin To Net: NetName=NetP21_4 Pin=P21-4
+Added Pin To Net: NetName=NetP21_4 Pin=R21-4
+Added Net: Name=NetP21_4
+Added Pin To Net: NetName=NetP22_1 Pin=P22-1
+Added Pin To Net: NetName=NetP22_1 Pin=R22-7
+Added Net: Name=NetP22_1
+Added Pin To Net: NetName=NetP22_2 Pin=P22-2
+Added Pin To Net: NetName=NetP22_2 Pin=R22-4
+Added Net: Name=NetP22_2
+Added Pin To Net: NetName=NetP110_1 Pin=P110-1
+Added Pin To Net: NetName=NetP110_1 Pin=R110-5
+Added Net: Name=NetP110_1
+Added Pin To Net: NetName=NetP110_2 Pin=P110-2
+Added Pin To Net: NetName=NetP110_2 Pin=R110-4
+Added Net: Name=NetP110_2
+Added Pin To Net: NetName=NetP110_3 Pin=P110-3
+Added Pin To Net: NetName=NetP110_3 Pin=R110-3
+Added Net: Name=NetP110_3
+Added Pin To Net: NetName=NetR21_3 Pin=R21-3
+Added Pin To Net: NetName=NetR21_3 Pin=R21-6
+Added Net: Name=NetR21_3
+Added Pin To Net: NetName=NetR22_5 Pin=R22-5
+Added Pin To Net: NetName=NetR22_5 Pin=R22-8
+Added Pin To Net: NetName=NetR22_5 Pin=R111-3
+Added Net: Name=NetR22_5
+Added Class: Name=ElekShemaRelais
+Added Room: Name=ElekShemaRelais
