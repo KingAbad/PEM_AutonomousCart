@@ -1,0 +1,163 @@
+[22-Nov-2020 17:45:53 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 17:45:53 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 8
+[22-Nov-2020 17:45:53 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:12
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(12): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 12
+[22-Nov-2020 17:46:11 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:12
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(12): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 12
+[22-Nov-2020 17:52:16 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 17:52:16 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 8
+[22-Nov-2020 17:52:16 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:12
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(12): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 12
+[22-Nov-2020 18:03:43 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:03:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:04:11 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:04:19 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:06:20 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:06:33 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:07:47 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[22-Nov-2020 18:07:47 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 18:07:47 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:07:58 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:09:51 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:09:57 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:12:12 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[22-Nov-2020 18:12:12 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 18:12:12 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:12:15 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:12:42 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[22-Nov-2020 18:12:42 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 18:12:42 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:12:49 UTC] PHP Notice:  Undefined index: username in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[22-Nov-2020 18:12:49 UTC] PHP Notice:  Undefined index: password in /home/project/public_html/svg/userlogin/jslogin.php on line 7
+[22-Nov-2020 18:12:49 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[22-Nov-2020 18:21:12 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 18:21:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 18:22:23 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 18:24:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function required_once() in /home/project/public_html/svg/userlogin/jslogin.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 2
+[22-Nov-2020 18:25:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function required_once() in /home/project/public_html/svg/userlogin/jslogin.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 2
+[22-Nov-2020 18:27:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function required_once() in /home/project/public_html/svg/userlogin/jslogin.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 2
+[22-Nov-2020 18:29:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function required_once() in /home/project/public_html/svg/userlogin/jslogin.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 2
+[22-Nov-2020 18:35:33 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 18:35:41 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 22:38:08 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 22:38:11 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[22-Nov-2020 22:38:55 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[23-Nov-2020 12:31:04 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[23-Nov-2020 12:42:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[23-Nov-2020 12:42:06 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:11
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(11): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 11
+[23-Nov-2020 13:49:37 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 23
+[23-Nov-2020 13:51:51 UTC] PHP Warning:  Unterminated comment starting line 6 in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[23-Nov-2020 13:56:38 UTC] PHP Warning:  Unterminated comment starting line 30 in /home/project/public_html/svg/userlogin/jslogin.php on line 30
+[23-Nov-2020 13:56:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 30
+[23-Nov-2020 13:59:48 UTC] PHP Warning:  Unterminated comment starting line 21 in /home/project/public_html/svg/userlogin/jslogin.php on line 21
+[23-Nov-2020 13:59:48 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'project_svg.users' doesn't exist in /home/project/public_html/svg/userlogin/jslogin.php:14
+Stack trace:
+#0 /home/project/public_html/svg/userlogin/jslogin.php(14): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/project/public_html/svg/userlogin/jslogin.php on line 14
+[23-Nov-2020 14:09:25 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 14:09:25 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 14:09:55 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 14:09:55 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 14:10:20 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 14:10:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 15:40:59 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[23-Nov-2020 15:40:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[24-Nov-2020 13:36:36 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[24-Nov-2020 13:36:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[24-Nov-2020 13:41:59 UTC] PHP Warning:  Unterminated comment starting line 27 in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[24-Nov-2020 13:41:59 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/project/public_html/svg/userlogin/jslogin.php on line 27
+[24-Nov-2020 13:42:59 UTC] PHP Warning:  Unterminated comment starting line 4 in /home/project/public_html/svg/userlogin/jslogin.php on line 4
+[24-Nov-2020 13:43:14 UTC] PHP Warning:  Unterminated comment starting line 4 in /home/project/public_html/svg/userlogin/jslogin.php on line 4
+[24-Nov-2020 13:43:44 UTC] PHP Warning:  Unterminated comment starting line 4 in /home/project/public_html/svg/userlogin/jslogin.php on line 4
+[24-Nov-2020 13:46:53 UTC] PHP Warning:  Unterminated comment starting line 4 in /home/project/public_html/svg/userlogin/jslogin.php on line 4
+[24-Nov-2020 13:57:36 UTC] PHP Warning:  Unterminated comment starting line 24 in /home/project/public_html/svg/userlogin/jslogin.php on line 24
+[24-Nov-2020 13:57:36 UTC] PHP Notice:  Undefined variable: con in /home/project/public_html/svg/userlogin/jslogin.php on line 5
+[24-Nov-2020 13:57:36 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/project/public_html/svg/userlogin/jslogin.php on line 5
+[24-Nov-2020 13:57:36 UTC] PHP Notice:  Undefined variable: con in /home/project/public_html/svg/userlogin/jslogin.php on line 6
+[24-Nov-2020 13:57:36 UTC] PHP Warning:  mysqli_real_escape_string() expects parameter 1 to be mysqli, null given in /home/project/public_html/svg/userlogin/jslogin.php on line 6
